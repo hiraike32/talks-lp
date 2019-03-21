@@ -1,0 +1,40 @@
+{
+  "name": "talks-lp",
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": "https://github.com/hiraike32/talks-lp.git",
+  "author": "hiraike32",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "d3": "^5.9.2",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.0.3",
+    "@storybook/addon-knobs": "^5.0.3",
+    "@storybook/react": "^5.0.3",
+    "@types/classnames": "^2.2.7",
+    "@types/d3": "^5.7.1",
+    "@types/google-map-react": "^0.23.11",
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.3",
+    "@types/storybook__react": "^4.0.1",
+    "css-loader": "^2.1.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.4000",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1",
+    "webpack-merge": "^4.2.1"
+  }
+}
