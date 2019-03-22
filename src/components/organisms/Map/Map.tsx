@@ -1,48 +1,58 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import styles from "./Map.scss";
-import { geoMercator, geoPath } from "d3-geo";
+import { geoMercator, geoPath, GeoProjection } from "d3-geo";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
+import { getScreenSize } from "../../../utils/getDisplayWidth";
+import { getCityJson, CityJson } from "../../../utils/getCityJson";
 
 const cx = classNames.bind(styles);
 
 const Map: React.FC = () => {
   const [worldData, setWorldData] = React.useState([]);
-  const projection = () => {
+  const [cityData, setCityData] = React.useState([] as CityJson[]);
+
+  const projection = (): GeoProjection => {
     return geoMercator()
-      .scale(100)
-      .translate([800 / 2, 450 / 2]);
+      .scale(getScreenSize() / 10 + 50)
+      .translate([getScreenSize() / 2, getScreenSize() / 5 + 100]);
   };
+
   React.useEffect(() => {
     //@ts-ignore
     setWorldData(feature(countries, countries.objects.countries).features);
+    setCityData(getCityJson());
   }, []);
+
   return (
-    <svg width={800} height={450} viewBox="0 0 800 450">
-      <g className="countries">
+    <svg width={"100vw"} height={(getScreenSize() / 5) * 2 + 75}>
+      <g className={cx("countries")}>
         {worldData.map((d, i) => (
           <path
             key={`path-${i}`}
             d={geoPath().projection(projection())(d) as string}
-            className="country"
-            fill={`rgba(38,50,56,${(1 / worldData.length) * i})`}
-            stroke="#FFFFFF"
+            fill={"#A4A4A4"}
+            stroke="#000"
             strokeWidth={0.5}
           />
         ))}
       </g>
       <g className="markers">
-        <circle
-          //@ts-ignore
-          cx={projection()([8, 48])[0]}
-          //@ts-ignore
-          cy={projection()([8, 48])[1]}
-          r={10}
-          fill="#E91E63"
-          className="marker"
-        />
+        {cityData &&
+          cityData.map((city: CityJson) => (
+            <circle
+              key={city.city}
+              // @ts-ignore
+              cx={projection()(city.coordinates)[0]}
+              // @ts-ignore
+              cy={projection()(city.coordinates)[1]}
+              r={city.total / 6 + 10}
+              fill="#58FA58"
+            />
+          ))}
       </g>
+      {console.log(cityData)}
     </svg>
   );
 };

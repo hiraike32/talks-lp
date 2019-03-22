@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/base.scss";
+import Map from "./components/organisms/Map/Map";
 
-ReactDOM.render(<h1>Hello World</h1>, document.getElementById("app"));
+ReactDOM.render(<Map />, document.getElementById("app"));
