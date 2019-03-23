@@ -1,0 +1,17 @@
+.container {
+  position: fixed;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu span:first-child {
+  margin-right: 0.5rem;
+}
