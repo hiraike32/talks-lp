@@ -26,13 +26,17 @@ const Map: React.FC = () => {
   }, []);
 
   return (
-    <svg width={"100vw"} height={(getScreenSize() / 100) * 47 + 12}>
+    <svg
+      width={"100vw"}
+      height={(getScreenSize() / 100) * 47 + 12}
+      className={cx("svg")}
+    >
       <g className={cx("countries")}>
         {worldData.map((d, i) => (
           <path
             key={`path-${i}`}
             d={geoPath().projection(projection())(d) as string}
-            fill={"#A4A4A4"}
+            fill={"#8E8E8E"}
             stroke="#000"
             strokeWidth={0.5}
           />
