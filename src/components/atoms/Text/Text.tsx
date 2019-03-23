@@ -10,6 +10,7 @@ type Props = {
   color?: "lime" | "white" | "gray";
   italic?: boolean;
   bold?: boolean;
+  light?: boolean;
   children: React.ReactNode;
 };
 
@@ -19,9 +20,18 @@ const Text: React.FC<Props> = ({
   color = "white",
   italic,
   bold,
+  light,
   children
 }) => (
-  <span className={cx(color, type, { italic: italic }, { bold: bold })}>
+  <span
+    className={cx(
+      color,
+      type,
+      { italic: italic },
+      { bold: bold },
+      { light: light }
+    )}
+  >
     {children}
   </span>
 );

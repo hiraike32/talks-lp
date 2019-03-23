@@ -19,7 +19,7 @@ const Top: React.FC = () => (
         <TopMessage />
       </div>
       <div className={cx("bar")}>
-        <ColorBox width="20rem" color="lime" bold />
+        <ColorBox width="30vw" color="lime" bold />
       </div>
     </div>
   </div>

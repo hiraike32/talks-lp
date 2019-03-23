@@ -9,8 +9,9 @@ const cx = classNames.bind(styles);
 const TopMessage: React.FC = () => (
   <div className={cx("container")}>
     <div className={cx("talks")}>
-      <Text type="h2">Erick</Text>
-      <Text type="h2">Wendel</Text>
+      <Text type="h2" light>
+        Erick Wendel
+      </Text>
       <Text type="h2" bold color="lime">
         Talks
       </Text>
@@ -21,7 +22,7 @@ const TopMessage: React.FC = () => (
       </Text>
     </div>
     <div className={cx("hashtag")}>
-      <Text type="h2" bold italic>
+      <Text type="h2" italic>
         #DaZLParaOMundo
       </Text>
     </div>

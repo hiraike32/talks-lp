@@ -15,10 +15,12 @@ const Header: React.FC = () => (
       <Text type="h3" bold color="lime">
         Erick
       </Text>
-      <Text type="h3">Wendel</Text>
+      <Text type="h3" light>
+        Wendel
+      </Text>
     </div>
     <div className={cx("menu")}>
-      <Text>Menu</Text>
+      <Text light>Menu</Text>
       <FontAwesomeIcon icon={faBars} size="2x" color="#fff" />
     </div>
   </div>
