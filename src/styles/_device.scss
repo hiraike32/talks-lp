@@ -1,0 +1,13 @@
+// smart phone
+@mixin sp {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+// pc
+@mixin pc {
+  @media (min-width: 768px) {
+    @content;
+  }
+}

@@ -1,7 +1,12 @@
-@import "./color";
+@import "./all.scss";
 
 html {
-  font-size: 10px;
+  @include pc {
+    font-size: 10px;
+  }
+  @include sp {
+    font-size: 4px;
+  }
 }
 
 body {

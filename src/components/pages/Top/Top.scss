@@ -6,10 +6,12 @@
 
 .topImage {
   width: 100%;
+  min-height: 300px;
 }
 
 .topImage img {
   width: 100%;
+  min-height: 300px;
   object-fit: cover;
   opacity: 0.25;
 }
@@ -25,12 +27,12 @@
 
 .topMessage {
   position: absolute;
-  height: 15rem;
   top: 0;
   bottom: 0;
   right: 0;
-  margin: auto 0;
   padding: 0 2rem;
+  display: flex;
+  align-items: center;
 }
 
 .bar {
