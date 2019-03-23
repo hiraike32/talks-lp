@@ -15,8 +15,8 @@ const Map: React.FC = () => {
 
   const projection = (): GeoProjection => {
     return geoMercator()
-      .scale(getScreenSize() / 10 + 50)
-      .translate([getScreenSize() / 2, getScreenSize() / 5 + 100]);
+      .scale(getScreenSize() / 7 + 2)
+      .translate([getScreenSize() / 2, (getScreenSize() / 7) * 2 + 17]);
   };
 
   React.useEffect(() => {
@@ -26,7 +26,7 @@ const Map: React.FC = () => {
   }, []);
 
   return (
-    <svg width={"100vw"} height={(getScreenSize() / 5) * 2 + 75}>
+    <svg width={"100vw"} height={(getScreenSize() / 100) * 47 + 12}>
       <g className={cx("countries")}>
         {worldData.map((d, i) => (
           <path
