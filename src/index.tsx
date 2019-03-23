@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/base.scss";
-import Map from "./components/organisms/Map/Map";
+import Top from "./components/pages/Top/Top";
 
-ReactDOM.render(<Map />, document.getElementById("app"));
+ReactDOM.render(<Top />, document.getElementById("app"));

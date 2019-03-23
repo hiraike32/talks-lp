@@ -1,0 +1,34 @@
+@import "../../../styles/all.scss";
+
+.container {
+  position: relative;
+}
+
+.topImage {
+  width: 100%;
+}
+
+.topImage img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu span:first-child {
+  margin-right: 0.5rem;
+}
+
+.topMessage {
+  position: absolute;
+  height: 15rem;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto 0;
+  padding: 0 2rem;
+}
