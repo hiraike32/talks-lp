@@ -10,7 +10,7 @@ story.add("Text", () => (
   <Text
     to={text("to", "")}
     type={select("type", ["h1", "h2", "h3", "p"], "h1")}
-    color={select("color", ["lime", "white"], "white")}
+    color={select("color", ["lime", "white", "gray"], "white")}
     bold={boolean("bold", false)}
     italic={boolean("italic", false)}
   >

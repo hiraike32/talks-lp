@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 type Props = {
   to?: string;
   type?: "h1" | "h2" | "h3" | "p";
-  color?: "lime" | "white";
+  color?: "lime" | "white" | "gray";
   italic?: boolean;
   bold?: boolean;
   children: React.ReactNode;
