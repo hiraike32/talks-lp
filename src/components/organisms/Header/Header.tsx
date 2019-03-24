@@ -20,8 +20,7 @@ const Header: React.FC = () => (
       </Text>
     </div>
     <div className={cx("menu")}>
-      <Text light>Menu</Text>
-      <FontAwesomeIcon icon={faBars} size="2x" color="#fff" />
+      <FontAwesomeIcon icon={faBars} size="3x" color="#fff" />
     </div>
   </div>
 );

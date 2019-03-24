@@ -3,6 +3,7 @@ import * as React from "react";
 import styles from "./TopMessage.scss";
 import Text from "../../atoms/Text/Text";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
+import LanguageSelection from "../LanguageSelection/LanguageSelection";
 
 const cx = classNames.bind(styles);
 
@@ -30,12 +31,7 @@ const TopMessage: React.FC = () => (
       <ColorBox width="5rem" color="lime" bold />
     </div>
     <div className={cx("language")}>
-      <Text color="lime" bold>
-        EN
-      </Text>
-      <Text color="gray" bold>
-        PT
-      </Text>
+      <LanguageSelection language="en" />
     </div>
   </div>
 );

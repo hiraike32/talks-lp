@@ -1,7 +1,9 @@
+@import "../../../styles/all.scss";
+
 .container {
   position: fixed;
   width: 100%;
-  padding: 2rem;
+  padding: $pageWidthPadding;
   display: flex;
   justify-content: space-between;
   align-items: center;
