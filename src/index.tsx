@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/base.scss";
-import Top from "./components/pages/Top/Top";
+import Root from "./components/pages/Root";
 
-ReactDOM.render(<Top />, document.getElementById("app"));
+ReactDOM.render(<Root />, document.getElementById("app"));

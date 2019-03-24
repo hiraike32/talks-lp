@@ -5,13 +5,13 @@ import Header from "../../organisms/Header/Header";
 import topImage from "../../../image/top.jpg";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
+import TalkMap from "../TalkMap/TalkMap";
 
 const cx = classNames.bind(styles);
 
 const Top: React.FC = () => (
   <div className={cx("container")}>
     <div className={cx("top")}>
-      <Header />
       <div className={cx("topImage")}>
         <img src={topImage} />
       </div>
@@ -21,6 +21,9 @@ const Top: React.FC = () => (
       <div className={cx("bar")}>
         <ColorBox width="30vw" color="lime" bold />
       </div>
+    </div>
+    <div className={cx("talkmap")}>
+      <TalkMap />
     </div>
   </div>
 );

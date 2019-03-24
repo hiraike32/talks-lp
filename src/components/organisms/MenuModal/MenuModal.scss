@@ -2,18 +2,34 @@
 
 .container {
   position: fixed;
-  top: 0;
-  bottom: 0;
+  top: -100vh;
   right: 0;
   left: 0;
   margin: auto;
+  transition: top 0.5s;
   width: 100vw;
   height: 100vh;
   z-index: 200;
   padding: 5rem;
   display: flex;
   flex-direction: column;
-  background: $modalBlack;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.title span {
+  margin-right: 0.5rem;
+}
+
+.open {
+  top: 0;
+}
+
+.closeButton {
+  cursor: pointer;
 }
 
 .header {
@@ -32,9 +48,26 @@
   padding: 5rem;
 }
 
-.menu span {
+.menuItem {
   flex-grow: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.menuItem a {
+  padding: 0.25rem 0.5rem;
+  transition: color 0.5s;
+}
+
+.menuItem a:hover span {
+  color: $fontLime;
+}
+
+.active {
+  cursor: default;
+}
+
+.active span {
+  color: $fontLime;
 }

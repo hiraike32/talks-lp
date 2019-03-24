@@ -10,9 +10,14 @@
   z-index: 100;
 }
 
+.container a {
+  text-decoration: none;
+}
+
 .menu {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .menu span:first-child {
