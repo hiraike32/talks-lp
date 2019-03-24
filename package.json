@@ -5,6 +5,7 @@
   "repository": "https://github.com/hiraike32/talks-lp.git",
   "author": "hiraike32",
   "license": "MIT",
+  "homepage": "https://hiraike32.github.io/talks-lp/",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "webpack-dev-server --config webpack.dev.js",
@@ -40,8 +41,10 @@
     "@types/storybook__addon-knobs": "^4.0.4",
     "@types/storybook__react": "^4.0.1",
     "@types/topojson-client": "^3.0.0",
+    "clean-webpack-plugin": "^2.0.1",
     "css-loader": "^2.1.1",
     "gh-pages": "^2.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",

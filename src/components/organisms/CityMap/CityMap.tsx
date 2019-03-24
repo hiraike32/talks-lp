@@ -1,16 +1,15 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import styles from "./Map.scss";
+import styles from "./CityMap.scss";
 import { geoMercator, geoPath, GeoProjection } from "d3-geo";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
 import { getCityJson, CityJson } from "../../../utils/getCityJson";
-import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
-const Map: React.FC = () => {
+const CityMap: React.FC = () => {
   //@ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
   const [cityData, setCityData] = React.useState([] as CityJson[]);
@@ -45,30 +44,15 @@ const Map: React.FC = () => {
       <g className="markers">
         {cityData &&
           cityData.map((city: CityJson) => (
-            <Link to={`/talk/${city.city}`}>
-              <circle
-                key={city.city}
-                // @ts-ignore
-                cx={projection()(city.coordinates)[0]}
-                // @ts-ignore
-                cy={projection()(city.coordinates)[1]}
-                r={city.total / 15 + 8}
-                fill="#58FA58"
-                onClick={() => console.log("map")}
-                className={cx("mapPin")}
-              />
-              <text
-                // @ts-ignore
-                x={projection()(city.coordinates)[0] + 10}
-                // @ts-ignore
-                y={projection()(city.coordinates)[1]}
-                fontSize="10"
-                fill="#fff"
-                className={cx("mapText")}
-              >
-                {city.city}
-              </text>
-            </Link>
+            <circle
+              key={city.city}
+              // @ts-ignore
+              cx={projection()(city.coordinates)[0]}
+              // @ts-ignore
+              cy={projection()(city.coordinates)[1]}
+              r={city.total / 6 + 10}
+              fill="#58FA58"
+            />
           ))}
       </g>
       {console.log(cityData)}
@@ -76,4 +60,4 @@ const Map: React.FC = () => {
   );
 };
 
-export default Map;
+export default CityMap;

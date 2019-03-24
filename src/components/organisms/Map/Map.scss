@@ -1,1 +1,20 @@
 @import "../../../styles/all.scss";
+
+.mapPin {
+  cursor: pointer;
+}
+
+.mapPin:hover {
+  fill: $hoverLime;
+  z-index: 100;
+}
+
+.mapText {
+  color: $fontWhite;
+  display: none;
+}
+
+.mapPin:hover + .mapText {
+  display: block;
+  z-index: 100;
+}
