@@ -8,7 +8,7 @@ import TalkMap from "./TalkMap/TalkMap";
 const Root: React.FC = () => {
   const [isMenuModal, setMenuModal] = useState(false);
   return (
-    <Router basename="talks-lp">
+    <Router basename={process.env.PUBLIC_URL}>
       <Header setMenuModal={setMenuModal} />
       <MenuModal isMenuModal={isMenuModal} setMenuModal={setMenuModal} />
       <Switch>
