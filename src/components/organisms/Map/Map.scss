@@ -10,11 +10,9 @@
 }
 
 .mapText {
-  color: $fontWhite;
   display: none;
 }
 
 .mapPin:hover + .mapText {
   display: block;
-  z-index: 100;
 }

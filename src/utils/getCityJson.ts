@@ -1,51 +1,45 @@
 import talks from "../resource/talks.json";
+import { CountryJson, TalkJson, CityJson } from "../types/talks.js";
 
-type TalkJson = {
-  title: string;
-  abstract: string;
-  type: string;
-  event: {
-    link: string;
-    name: string;
-  };
-  slides: string;
-  photos: string;
-  video: string;
-  tags: string[];
-  location: {
-    latitude: number;
-    longitude: number;
-    country: string;
-    uf: string;
-    city: string;
-  };
-  additionalLinks: string[];
-  language: string;
-  date: string;
-};
-
-export type CityJson = {
-  city: string;
-  coordinates: [number, number];
-  total: number;
-};
-
-export const getCityJson = () => {
-  let cityJson: CityJson[] = [];
+export const getCountryJson = () => {
+  let countryJson: CountryJson[] = [];
   talks.map((talk: TalkJson) => {
-    let cityExists = false;
-    cityJson.map(cj => {
-      if (cj.city === talk.location.city) {
+    let countryExists = false;
+    countryJson.map(cj => {
+      if (cj.country === talk.location.country) {
         cj.total += 1;
-        cityExists = true;
+        countryExists = true;
       }
     });
-    if (!cityExists) {
-      cityJson.push({
-        city: talk.location.city,
+    if (!countryExists) {
+      countryJson.push({
+        country: talk.location.country,
         coordinates: [talk.location.longitude, talk.location.latitude],
         total: 1
       });
+    }
+  });
+  return countryJson;
+};
+
+export const getCityJson = (country: string) => {
+  let cityJson: CityJson[] = [];
+  talks.map((talk: TalkJson) => {
+    if (talk.location.country === country) {
+      let cityExists = false;
+      cityJson.map(cj => {
+        if (cj.city === talk.location.city) {
+          cj.total += 1;
+          cityExists = true;
+        }
+      });
+      if (!cityExists) {
+        cityJson.push({
+          city: talk.location.city,
+          coordinates: [talk.location.longitude, talk.location.latitude],
+          total: 1
+        });
+      }
     }
   });
   return cityJson;
