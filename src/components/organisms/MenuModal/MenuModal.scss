@@ -48,6 +48,11 @@
   padding: 5rem;
 }
 
+.menuItem a {
+  padding: 0.25rem 0.5rem;
+  transition: color 0.5s;
+}
+
 .menuItem {
   flex-grow: 1;
   display: flex;
@@ -55,9 +60,8 @@
   justify-content: center;
 }
 
-.menuItem a {
-  padding: 0.25rem 0.5rem;
-  transition: color 0.5s;
+.active span {
+  color: $fontLime;
 }
 
 .menuItem a:hover span {
@@ -66,8 +70,4 @@
 
 .active {
   cursor: default;
-}
-
-.active span {
-  color: $fontLime;
 }

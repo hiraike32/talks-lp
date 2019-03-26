@@ -3,9 +3,11 @@
 html {
   font-family: "Roboto", sans-serif;
   letter-spacing: 0.25em;
+
   @include pc {
     font-size: 10px;
   }
+
   @include sp {
     font-size: 4px;
   }

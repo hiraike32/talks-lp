@@ -1,5 +1,9 @@
 @import "../../../styles/all.scss";
 
+.container button span {
+  margin-right: 1rem;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -17,8 +21,4 @@
 
 .container a {
   width: 40%;
-}
-
-.container button span {
-  margin-right: 1rem;
 }
