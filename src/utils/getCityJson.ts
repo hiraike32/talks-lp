@@ -44,3 +44,12 @@ export const getCityJson = (country: string) => {
   });
   return cityJson;
 };
+
+export const getTalkJson = (data: string) => {
+  const talkJson: TalkJson[] = talks.filter((talk: TalkJson) => {
+    if (talk.date === data) {
+      return true;
+    }
+  });
+  return talkJson[0];
+};
