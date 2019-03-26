@@ -1,6 +1,23 @@
 import talks from "../resource/talks.json";
 import { CountryJson, TalkJson, CityJson } from "../types/talks.js";
 
+export const getPagedTalkJson = () => {
+  let pagedTalkJson: TalkJson[][] = [];
+  let talksJson: TalkJson[] = [];
+  const pagedContent = 6;
+  talks.map((talk: TalkJson, index: number) => {
+    talksJson.push(talk);
+    if (index % pagedContent === 5) {
+      pagedTalkJson.push(talksJson);
+      talksJson = [];
+    }
+  });
+  if (talksJson.length > 0) {
+    pagedTalkJson.push(talksJson);
+  }
+  return pagedTalkJson;
+};
+
 export const getCountryJson = () => {
   let countryJson: CountryJson[] = [];
   talks.map((talk: TalkJson) => {

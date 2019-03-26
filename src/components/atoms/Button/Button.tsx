@@ -7,13 +7,27 @@ const cx = classNames.bind(styles);
 
 type Props = {
   color?: "black" | "lime";
-  to: string;
+  to?: string;
+  onClick?: any;
 };
 
-const Button: React.FC<Props> = ({ color = "black", to, children }) => (
-  <Link to={to}>
-    <button className={cx("button", color)}>{children}</button>
-  </Link>
+const Button: React.FC<Props> = ({
+  color = "black",
+  to,
+  children,
+  onClick
+}) => (
+  <>
+    {to ? (
+      <Link to={to}>
+        <button className={cx("button", color)}>{children}</button>
+      </Link>
+    ) : (
+      <button className={cx("button", color)} onClick={onClick}>
+        {children}
+      </button>
+    )}
+  </>
 );
 
 export default Button;
