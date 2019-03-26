@@ -20,8 +20,12 @@ const WorldTalkList: React.FC<Props> = ({ countryJson }) => (
     </div>
     <div className={cx("worldTalkList")}>
       <div className={cx("head")}>
-        <Text bold>Country</Text>
-        <Text bold>Talks</Text>
+        <Text bold type="h3">
+          Country
+        </Text>
+        <Text bold type="h3">
+          Talks
+        </Text>
       </div>
       <div className={cx("body")}>
         {countryJson.map((country: CountryJson) => {

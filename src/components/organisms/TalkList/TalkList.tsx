@@ -27,9 +27,9 @@ const TalkList: React.FC<Props> = ({ title, pagedTalkJson }) => {
       <div className={cx("TalkList")}>
         <div className={cx("head")}>
           <ColorCircle />
-          <Text bold>Country</Text>
+          <Text bold>Past Talks</Text>
           <ColorCircle color="orange" />
-          <Text bold>Talks</Text>
+          <Text bold>Talks Future</Text>
         </div>
         <div className={cx("body")}>
           {pagedTalkJson[page].map((talk: TalkJson) => {
@@ -39,12 +39,20 @@ const TalkList: React.FC<Props> = ({ title, pagedTalkJson }) => {
       </div>
       <div className={cx("pager")}>
         {page > 0 ? (
-          <Button onClick={() => setPage(page => page - 1)}>Prev</Button>
+          <Button onClick={() => setPage(page => page - 1)}>
+            <Text type="h3" color="lime">
+              Prev
+            </Text>
+          </Button>
         ) : (
           <div className={cx("emptyButton")} />
         )}
         {pagedTalkJson.length - 1 > page ? (
-          <Button onClick={() => setPage(page => page + 1)}>Next</Button>
+          <Button onClick={() => setPage(page => page + 1)}>
+            <Text type="h3" color="lime">
+              Next
+            </Text>
+          </Button>
         ) : (
           <div className={cx("emptyButton")} />
         )}

@@ -12,7 +12,7 @@ import TalkList from "../../organisms/TalkList/TalkList";
 const cx = classNames.bind(styles);
 
 const Top: React.FC = () => {
-  const countryJson = getCountryJson();
+  const [countryJson, setCountryJson] = React.useState(getCountryJson());
 
   return (
     <div className={cx("container")}>
@@ -28,7 +28,7 @@ const Top: React.FC = () => {
         </div>
       </div>
       <div className={cx("talkmap")}>
-        <TalkMap countryJson={countryJson} />
+        <TalkMap />
       </div>
       <div className={cx("talkDetail")}>
         <div className={cx("worldList")}>

@@ -1,11 +1,15 @@
 @import "../../../styles/all.scss";
 
 .container {
-}
-
-.title {
-  text-align: center;
+  display: flex;
 }
 
 .map {
+  width: 50%;
+}
+
+.list {
+  width: 50%;
+  padding: $pageHightPadding $pageWidthPadding;
+  background: $backgroundBlackOut;
 }

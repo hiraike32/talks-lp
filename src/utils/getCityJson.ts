@@ -5,9 +5,28 @@ export const getPagedTalkJson = () => {
   let pagedTalkJson: TalkJson[][] = [];
   let talksJson: TalkJson[] = [];
   const pagedContent = 6;
-  talks.map((talk: TalkJson, index: number) => {
+  talks.map((talk: TalkJson) => {
     talksJson.push(talk);
-    if (index % pagedContent === 5) {
+    if (talksJson.length >= pagedContent) {
+      pagedTalkJson.push(talksJson);
+      talksJson = [];
+    }
+  });
+  if (talksJson.length > 0) {
+    pagedTalkJson.push(talksJson);
+  }
+  return pagedTalkJson;
+};
+
+export const getPagedCityTalkJson = (country: string) => {
+  let pagedTalkJson: TalkJson[][] = [];
+  let talksJson: TalkJson[] = [];
+  const pagedContent = 6;
+  talks.map((talk: TalkJson) => {
+    if (talk.location.country === country) {
+      talksJson.push(talk);
+    }
+    if (talksJson.length >= pagedContent) {
       pagedTalkJson.push(talksJson);
       talksJson = [];
     }

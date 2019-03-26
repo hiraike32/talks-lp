@@ -13,10 +13,10 @@ library.add(faArrowRight);
 
 const TalkTotalCard: React.FC<CountryJson> = ({ country, total }) => (
   <div className={cx("container")}>
-    <Text>{country}</Text>
-    <Text>{total}</Text>
+    <Text type="h3">{country}</Text>
+    <Text type="h3">{total}</Text>
     <Button to={`talks/${country}`} color="lime">
-      <Text>Detail</Text>
+      <Text type="h3">Detail</Text>
       <FontAwesomeIcon icon={faArrowRight} />
     </Button>
   </div>

@@ -31,7 +31,7 @@ const CityMap: React.FC<Props> = ({ match }) => {
 
   return (
     <svg width={"100vw"} height={"100vh"} className={cx("svg")}>
-      <g className={cx("countries")}>
+      <g>
         {worldData.map((d: any, i: number) => (
           <path
             key={`path-${i}`}
@@ -42,7 +42,7 @@ const CityMap: React.FC<Props> = ({ match }) => {
           />
         ))}
       </g>
-      <g className="markers">
+      <g>
         {cityData &&
           cityData.map((city: CityJson) => (
             <a key={city.city}>

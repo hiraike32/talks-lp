@@ -19,7 +19,7 @@ const Button: React.FC<Props> = ({
 }) => (
   <>
     {to ? (
-      <Link to={to}>
+      <Link to={to} className={cx("link")}>
         <button className={cx("button", color)}>{children}</button>
       </Link>
     ) : (

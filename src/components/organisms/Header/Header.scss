@@ -3,7 +3,7 @@
 .container {
   position: fixed;
   width: 100%;
-  padding: $pageWidthPadding;
+  padding: $headerHeightPadding $pageWidthPadding;
   display: flex;
   justify-content: space-between;
   align-items: center;
