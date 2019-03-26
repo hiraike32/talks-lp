@@ -1,10 +1,10 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import styles from "./TalkMap.scss";
-import Map from "../../organisms/Map/Map";
-import Text from "../../atoms/Text/Text";
 import { CountryJson } from "../../../types/talks";
 import { getCountryJson } from "../../../utils/getCityJson";
+import Text from "../../atoms/Text/Text";
+import Map from "../../organisms/Map/Map";
+import styles from "./TalkMap.scss";
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +14,7 @@ const TalkMap: React.FC = () => {
     <>
       <div className={cx("container")}>
         <div className={cx("title")}>
-          <Text type="h2" bold italic color="lime">
+          <Text type="h2" bold={true} italic={true} color="lime">
             Talks
           </Text>
         </div>

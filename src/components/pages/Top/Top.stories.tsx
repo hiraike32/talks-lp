@@ -1,10 +1,10 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Top from "./Top";
 import { MemoryRouter } from "react-router";
+import Top from "./Top";
 
 const story = storiesOf("pages", module);
-story.addDecorator(story => (
+story.addDecorator((story) => (
   <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
 ));
 

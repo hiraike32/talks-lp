@@ -1,22 +1,22 @@
 import classNames from "classnames/bind";
-import * as React from "react";
-import styles from "./Map.scss";
 import { geoMercator, geoPath, GeoProjection } from "d3-geo";
+import * as React from "react";
+import { Link } from "react-router-dom";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
-import { getScreenSize } from "../../../utils/getDisplayWidth";
-import { getCountryJson } from "../../../utils/getCityJson";
-import { Link } from "react-router-dom";
 import { CountryJson } from "../../../types/talks";
+import { getCountryJson } from "../../../utils/getCityJson";
+import { getScreenSize } from "../../../utils/getDisplayWidth";
+import styles from "./Map.scss";
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props {
   countryJson: CountryJson[];
-};
+}
 
 const Map: React.FC<Props> = ({ countryJson }) => {
-  //@ts-ignore
+  // @ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
 
   const projection = (): GeoProjection => {
@@ -53,7 +53,6 @@ const Map: React.FC<Props> = ({ countryJson }) => {
                 cy={projection()(city.coordinates)[1]}
                 r={city.total / 5 + 8}
                 fill="#58FA58"
-                onClick={() => console.log("map")}
                 className={cx("mapPin")}
               />
               <text
@@ -70,7 +69,6 @@ const Map: React.FC<Props> = ({ countryJson }) => {
             </Link>
           ))}
       </g>
-      {console.log(countryJson)}
     </svg>
   );
 };

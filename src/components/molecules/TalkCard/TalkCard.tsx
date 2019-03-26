@@ -1,10 +1,10 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import styles from "./TalkCard.scss";
+import { Link } from "react-router-dom";
 import { TalkJson } from "../../../types/talks";
 import ColorCircle from "../../atoms/ColorCircle/ColorCircle";
-import { Link } from "react-router-dom";
 import Text from "../../atoms/Text/Text";
+import styles from "./TalkCard.scss";
 
 const cx = classNames.bind(styles);
 

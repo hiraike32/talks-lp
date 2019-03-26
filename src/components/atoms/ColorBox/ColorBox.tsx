@@ -4,16 +4,16 @@ import styles from "./ColorBox.scss";
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props {
   color?: "white" | "lime";
   width: string;
   bold?: boolean;
-};
+}
 
 const ColorBox: React.FC<Props> = ({ color = "white", width, bold }) => (
   <div
-    className={cx("colorBox", color, { bold: bold })}
-    style={{ width: width }}
+    className={cx("colorBox", color, { bold })}
+    style={{ width }}
   />
 );
 

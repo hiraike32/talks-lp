@@ -1,4 +1,4 @@
-export type TalkJson = {
+export interface TalkJson {
   title: string;
   abstract: string;
   type: string;
@@ -20,16 +20,16 @@ export type TalkJson = {
   additionalLinks: string[];
   language: string;
   date: string;
-};
+}
 
-export type CountryJson = {
+export interface CountryJson {
   country: string;
   coordinates: [number, number];
   total: number;
-};
+}
 
-export type CityJson = {
+export interface CityJson {
   city: string;
   coordinates: [number, number];
   total: number;
-};
+}

@@ -4,7 +4,7 @@ import styles from "./Text.scss";
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props {
   to?: string;
   type?: "h1" | "h2" | "h3" | "p";
   color?: "lime" | "white" | "gray";
@@ -12,7 +12,7 @@ type Props = {
   bold?: boolean;
   light?: boolean;
   children: React.ReactNode;
-};
+}
 
 const Text: React.FC<Props> = ({
   to,
@@ -21,15 +21,15 @@ const Text: React.FC<Props> = ({
   italic,
   bold,
   light,
-  children
+  children,
 }) => (
   <span
     className={cx(
       color,
       type,
-      { italic: italic },
-      { bold: bold },
-      { light: light }
+      { italic },
+      { bold },
+      { light },
     )}
   >
     {children}

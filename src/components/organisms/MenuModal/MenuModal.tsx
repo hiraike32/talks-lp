@@ -1,20 +1,20 @@
-import classNames from "classnames/bind";
-import * as React from "react";
-import styles from "./MenuModal.scss";
-import Text from "../../atoms/Text/Text";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LanguageSelection from "../../molecules/LanguageSelection/LanguageSelection";
+import classNames from "classnames/bind";
+import * as React from "react";
 import { NavLink } from "react-router-dom";
+import Text from "../../atoms/Text/Text";
+import LanguageSelection from "../../molecules/LanguageSelection/LanguageSelection";
+import styles from "./MenuModal.scss";
 
 const cx = classNames.bind(styles);
 library.add(faTimes);
 
-type Props = {
+interface Props {
   isMenuModal: boolean;
   setMenuModal: React.Dispatch<React.SetStateAction<boolean>>;
-};
+}
 
 const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
   <>
@@ -26,10 +26,10 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
         <LanguageSelection language="en" />
         <div className={cx("title")}>
           <NavLink to="/" onClick={() => setMenuModal(false)}>
-            <Text light type="h2">
+            <Text light={true} type="h2">
               Erick Wendel
             </Text>
-            <Text light type="h2" color="lime">
+            <Text light={true} type="h2" color="lime">
               Talks
             </Text>
           </NavLink>
@@ -41,48 +41,48 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
       <div className={cx("menu")}>
         <div className={cx("menuItem")}>
           <NavLink
-            exact
+            exact={true}
             to="/talks"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
-            <Text light type="h2">
+            <Text light={true} type="h2">
               TALKS
             </Text>
           </NavLink>
         </div>
         <div className={cx("menuItem")}>
           <NavLink
-            exact
+            exact={true}
             to="/posts"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
-            <Text light type="h2">
+            <Text light={true} type="h2">
               POSTS
             </Text>
           </NavLink>
         </div>
         <div className={cx("menuItem")}>
           <NavLink
-            exact
+            exact={true}
             to="/videos"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
-            <Text light type="h2">
+            <Text light={true} type="h2">
               VIDEOS
             </Text>
           </NavLink>
         </div>
         <div className={cx("menuItem")}>
           <NavLink
-            exact
+            exact={true}
             to="/contact"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
-            <Text light type="h2">
+            <Text light={true} type="h2">
               CONTACT
             </Text>
           </NavLink>

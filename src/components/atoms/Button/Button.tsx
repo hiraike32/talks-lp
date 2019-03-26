@@ -1,21 +1,21 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import styles from "./Button.scss";
 import { Link } from "react-router-dom";
+import styles from "./Button.scss";
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props {
   color?: "black" | "lime";
   to?: string;
   onClick?: any;
-};
+}
 
 const Button: React.FC<Props> = ({
   color = "black",
   to,
   children,
-  onClick
+  onClick,
 }) => (
   <>
     {to ? (

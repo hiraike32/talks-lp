@@ -1,13 +1,13 @@
+import { select, withKnobs } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Button from "./Button";
-import { withKnobs, select } from "@storybook/addon-knobs";
 import { MemoryRouter } from "react-router";
+import Button from "./Button";
 
 const story = storiesOf("atoms", module);
 story
   .addDecorator(withKnobs)
-  .addDecorator(story => (
+  .addDecorator((story) => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ));
 

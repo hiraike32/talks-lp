@@ -4,9 +4,9 @@ import styles from "./ColorCircle.scss";
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props {
   color?: "lime" | "orange";
-};
+}
 
 const ColorCircle: React.FC<Props> = ({ color = "lime" }) => (
   <div className={cx("colorCircle", color)} />

@@ -1,12 +1,12 @@
 import classNames from "classnames/bind";
-import * as React from "react";
-import styles from "./CityMap.scss";
 import { geoMercator, geoPath, GeoProjection } from "d3-geo";
+import * as React from "react";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
-import { getCityJson } from "../../../utils/getCityJson";
 import { CityJson } from "../../../types/talks";
+import { getCityJson } from "../../../utils/getCityJson";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
+import styles from "./CityMap.scss";
 
 const cx = classNames.bind(styles);
 
@@ -15,12 +15,12 @@ interface Props {
 }
 
 const CityMap: React.FC<Props> = ({ match }) => {
-  //@ts-ignore
+  // @ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
   const cityData = getCityJson(match.params.country);
   const mapCenter: [number, number] = [
     cityData[0].coordinates[0],
-    cityData[0].coordinates[1]
+    cityData[0].coordinates[1],
   ];
 
   const projection = (): GeoProjection => {

@@ -1,34 +1,34 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import styles from "./TopMessage.scss";
-import Text from "../../atoms/Text/Text";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
+import Text from "../../atoms/Text/Text";
 import LanguageSelection from "../LanguageSelection/LanguageSelection";
+import styles from "./TopMessage.scss";
 
 const cx = classNames.bind(styles);
 
 const TopMessage: React.FC = () => (
   <div className={cx("container")}>
     <div className={cx("talks")}>
-      <Text type="h2" light>
+      <Text type="h2" light={true}>
         Erick Wendel
       </Text>
-      <Text type="h2" bold color="lime">
+      <Text type="h2" bold={true} color="lime">
         Talks
       </Text>
     </div>
     <div className={cx("world")}>
-      <Text type="h1" bold>
+      <Text type="h1" bold={true}>
         Let's dominate the world
       </Text>
     </div>
     <div className={cx("hashtag")}>
-      <Text type="h2" italic>
+      <Text type="h2" italic={true}>
         #DaZLParaOMundo
       </Text>
     </div>
     <div className={cx("border")}>
-      <ColorBox width="5rem" color="lime" bold />
+      <ColorBox width="5rem" color="lime" bold={true} />
     </div>
     <div className={cx("language")}>
       <LanguageSelection language="en" />

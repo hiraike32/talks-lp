@@ -1,11 +1,11 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
-import Map from "./Map";
 import { MemoryRouter } from "react-router";
 import { getCountryJson } from "../../../utils/getCityJson";
+import Map from "./Map";
 
 const story = storiesOf("organisms", module);
-story.addDecorator(story => (
+story.addDecorator((story) => (
   <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
 ));
 

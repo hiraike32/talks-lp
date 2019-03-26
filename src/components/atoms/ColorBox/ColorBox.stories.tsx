@@ -1,7 +1,7 @@
+import { boolean, select, text, withKnobs } from "@storybook/addon-knobs";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import ColorBox from "./ColorBox";
-import { text, withKnobs, select, boolean } from "@storybook/addon-knobs";
 
 const story = storiesOf("atoms", module);
 story.addDecorator(withKnobs);

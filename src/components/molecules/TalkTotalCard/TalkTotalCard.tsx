@@ -1,12 +1,12 @@
-import classNames from "classnames/bind";
-import * as React from "react";
-import styles from "./TalkTotalCard.scss";
-import { CountryJson } from "../../../types/talks";
-import Text from "../../atoms/Text/Text";
-import Button from "../../atoms/Button/Button";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import classNames from "classnames/bind";
+import * as React from "react";
+import { CountryJson } from "../../../types/talks";
+import Button from "../../atoms/Button/Button";
+import Text from "../../atoms/Text/Text";
+import styles from "./TalkTotalCard.scss";
 
 const cx = classNames.bind(styles);
 library.add(faArrowRight);
