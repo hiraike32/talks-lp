@@ -11,10 +11,13 @@ import { CountryJson } from "../../../types/talks";
 
 const cx = classNames.bind(styles);
 
-const Map: React.FC = () => {
+type Props = {
+  countryJson: CountryJson[];
+};
+
+const Map: React.FC<Props> = ({ countryJson }) => {
   //@ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
-  const cityData = getCountryJson();
 
   const projection = (): GeoProjection => {
     return geoMercator()
@@ -40,8 +43,8 @@ const Map: React.FC = () => {
         ))}
       </g>
       <g className="markers">
-        {cityData &&
-          cityData.map((city: CountryJson) => (
+        {countryJson &&
+          countryJson.map((city: CountryJson) => (
             <Link to={`/talks/${city.country}`} key={city.country}>
               <circle
                 // @ts-ignore
@@ -67,7 +70,7 @@ const Map: React.FC = () => {
             </Link>
           ))}
       </g>
-      {console.log(cityData)}
+      {console.log(countryJson)}
     </svg>
   );
 };
