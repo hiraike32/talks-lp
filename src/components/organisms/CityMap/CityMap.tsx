@@ -3,30 +3,44 @@ import { geoMercator, geoPath, GeoProjection } from "d3-geo";
 import * as React from "react";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
-import { CityJson } from "../../../types/talks";
-import { getCityJson } from "../../../utils/getCityJson";
+import { CityJson, TalkJson } from "../../../types/talks";
+import { getCityJson, getPagedCityTalkJson } from "../../../utils/getCityJson";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
 import styles from "./CityMap.scss";
 
 const cx = classNames.bind(styles);
 
 interface Props {
-  match?: any;
+  pagedTalkJson: TalkJson[][];
+  setPagedCityTalkJson: React.Dispatch<React.SetStateAction<TalkJson[][]>>;
+  match: any;
 }
 
-const CityMap: React.FC<Props> = ({ match }) => {
+const CityMap: React.FC<Props> = ({
+  match,
+  pagedTalkJson,
+  setPagedCityTalkJson,
+}) => {
   // @ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
-  const cityData = getCityJson(match.params.country);
+  const [cityData, setCityData] = React.useState(
+    getCityJson(match.params.country),
+  );
   const mapCenter: [number, number] = [
     cityData[0].coordinates[0],
     cityData[0].coordinates[1],
   ];
+  const [selectedCity, setSelectedCity] = React.useState();
 
   const projection = (): GeoProjection => {
     return geoMercator()
       .scale((getScreenSize() * 2) / 5 + 200)
       .center(mapCenter);
+  };
+
+  const handleClickCircle = (city: string) => {
+    setPagedCityTalkJson(getPagedCityTalkJson(city, pagedTalkJson));
+    setSelectedCity(city);
   };
 
   return (
@@ -52,9 +66,14 @@ const CityMap: React.FC<Props> = ({ match }) => {
                 cx={projection()(city.coordinates)[0]}
                 // @ts-ignore
                 cy={projection()(city.coordinates)[1]}
-                r={city.total / 6 + 10}
-                fill="#58FA58"
+                r={city.total / 2 + 10}
+                fill={
+                  selectedCity && city.city !== selectedCity
+                    ? "#0B610B"
+                    : "#07ef06"
+                }
                 className={cx("mapPin")}
+                onClick={() => handleClickCircle(city.city)}
               />
               <text
                 // @ts-ignore

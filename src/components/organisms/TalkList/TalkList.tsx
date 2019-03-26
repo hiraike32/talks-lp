@@ -1,5 +1,9 @@
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { TalkJson } from "../../../types/talks";
 import Button from "../../atoms/Button/Button";
 import ColorCircle from "../../atoms/ColorCircle/ColorCircle";
@@ -8,18 +12,29 @@ import TalkCard from "../../molecules/TalkCard/TalkCard";
 import styles from "./TalkList.scss";
 
 const cx = classNames.bind(styles);
+library.add(faArrowLeft);
 
 interface Props {
-  title: string;
+  title: React.ReactNode;
+  to?: string;
   pagedTalkJson: TalkJson[][];
 }
 
-const TalkList: React.FC<Props> = ({ title, pagedTalkJson }) => {
+const TalkList: React.FC<Props> = ({ title, to, pagedTalkJson }) => {
   const [page, setPage] = React.useState(0);
 
   return (
     <div className={cx("container")}>
       <div className={cx("title")}>
+        {to && (
+          <Link to="/talks">
+            <FontAwesomeIcon
+              icon={faArrowLeft}
+              size="2x"
+              className={cx("arrow")}
+            />
+          </Link>
+        )}
         <Text type="h2" color="lime" italic={true} bold={true}>
           {title}
         </Text>

@@ -18,7 +18,7 @@ export const getPagedTalkJson = () => {
   return pagedTalkJson;
 };
 
-export const getPagedCityTalkJson = (country: string) => {
+export const getPagedCountryTalkJson = (country: string) => {
   const pagedTalkJson: TalkJson[][] = [];
   let talksJson: TalkJson[] = [];
   const pagedContent = 6;
@@ -30,6 +30,30 @@ export const getPagedCityTalkJson = (country: string) => {
       pagedTalkJson.push(talksJson);
       talksJson = [];
     }
+  });
+  if (talksJson.length > 0) {
+    pagedTalkJson.push(talksJson);
+  }
+  return pagedTalkJson;
+};
+
+export const getPagedCityTalkJson = (
+  city: string,
+  pagedCountryTalkJson: TalkJson[][],
+) => {
+  const pagedTalkJson: TalkJson[][] = [];
+  let talksJson: TalkJson[] = [];
+  const pagedContent = 6;
+  pagedCountryTalkJson.map((countryTalksJson: TalkJson[]) => {
+    countryTalksJson.map((countryTalkJson: TalkJson) => {
+      if (countryTalkJson.location.city === city) {
+        talksJson.push(countryTalkJson);
+      }
+      if (talksJson.length >= pagedContent) {
+        pagedTalkJson.push(talksJson);
+        talksJson = [];
+      }
+    });
   });
   if (talksJson.length > 0) {
     pagedTalkJson.push(talksJson);
