@@ -5,6 +5,10 @@
   padding: 1.5rem 0;
 }
 
+.container:hover {
+  opacity: 0.5;
+}
+
 .container a {
   text-decoration: none;
 }
@@ -24,6 +28,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  flex: 1;
 }
 
 .bottom {

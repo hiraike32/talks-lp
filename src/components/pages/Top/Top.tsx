@@ -6,7 +6,8 @@ import TopMessage from "../../molecules/TopMessage/TopMessage";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TalkMap from "../TalkMap/TalkMap";
 import WorldTalkList from "../../organisms/WorldTalkList/WorldTalkList";
-import { getCountryJson } from "../../../utils/getCityJson";
+import { getCountryJson, getPagedTalkJson } from "../../../utils/getCityJson";
+import TalkList from "../../organisms/TalkList/TalkList";
 
 const cx = classNames.bind(styles);
 
@@ -32,6 +33,9 @@ const Top: React.FC = () => {
       <div className={cx("talkDetail")}>
         <div className={cx("worldList")}>
           <WorldTalkList countryJson={countryJson} />
+        </div>
+        <div className={cx("talkList")}>
+          <TalkList title="Recent Talks" pagedTalkJson={getPagedTalkJson()} />
         </div>
       </div>
     </div>
