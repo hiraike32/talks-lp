@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../organisms/Header/Header";
 import MenuModal from "../organisms/MenuModal/MenuModal";
 import TalkCity from "./TalkCity/TalkCity";
+import TalkDetail from "./TalkDetail/TalkDetail";
 import TalkMap from "./TalkMap/TalkMap";
 import Top from "./Top/Top";
 
@@ -16,6 +17,11 @@ const Root: React.FC = () => {
         <Route exact={true} path="/" component={Top} />
         <Route exact={true} path="/talks" component={TalkMap} />
         <Route exact={true} path="/talks/:country" component={TalkCity} />
+        <Route
+          exact={true}
+          path="/talks/:country/:date"
+          component={TalkDetail}
+        />
       </Switch>
     </Router>
   );

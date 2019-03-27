@@ -43,7 +43,13 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[path][name].[ext]"
+              name(file) {
+                if (process.env.NODE_ENV) {
+                  return "/talks-lp/[path][name].[ext]";
+                } else {
+                  return "/[path][name].[ext]";
+                }
+              }
             }
           }
         ]
