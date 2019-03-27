@@ -105,9 +105,9 @@ export const getCityJson = (country: string) => {
   return cityJson;
 };
 
-export const getTalkJson = (data: string) => {
+export const getTalkJson = (date: string) => {
   const talkJson: TalkJson[] = talks.filter((talk: TalkJson) => {
-    if (talk.date === data) {
+    if (talk.date === date) {
       return true;
     }
   });
