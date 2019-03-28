@@ -1,12 +1,12 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router";
-import { getCountryJson } from "../../../utils/getTalksJson";
-import TalkTotalCard from "./TalkTotalCard";
+import { getPagedPostJson } from "../../../utils/getPostsJson";
+import PostCard from "./PostCard";
 
 const story = storiesOf("molecules", module).addDecorator((story) => (
   <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
 ));
-const countryJson = getCountryJson();
+const postJson = getPagedPostJson();
 
-story.add("TalkTotalCard", () => <TalkTotalCard {...countryJson[0]} />);
+story.add("PostCard", () => <PostCard {...postJson[0][0]} />);

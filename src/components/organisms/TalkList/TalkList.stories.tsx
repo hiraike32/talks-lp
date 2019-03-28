@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router";
-import { getPagedTalkJson } from "../../../utils/getCityJson";
+import { getPagedTalkJson } from "../../../utils/getTalksJson";
 import TalkList from "./TalkList";
 
 const story = storiesOf("organisms", module).addDecorator((story) => (

@@ -4,8 +4,8 @@ import * as React from "react";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
 import { CityJson, TalkJson } from "../../../types/talks";
-import { getCityJson, getPagedCityTalkJson } from "../../../utils/getCityJson";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
+import { getCityJson, getPagedCityTalkJson } from "../../../utils/getTalksJson";
 import styles from "./CityMap.scss";
 
 const cx = classNames.bind(styles);

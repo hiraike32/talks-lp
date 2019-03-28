@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
 import { CountryJson } from "../../../types/talks";
-import { getCountryJson } from "../../../utils/getCityJson";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
+import { getCountryJson } from "../../../utils/getTalksJson";
 import styles from "./Map.scss";
 
 const cx = classNames.bind(styles);

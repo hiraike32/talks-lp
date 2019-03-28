@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import topImage from "../../../image/top.jpg";
-import { getCountryJson, getPagedTalkJson } from "../../../utils/getCityJson";
+import { getCountryJson, getPagedTalkJson } from "../../../utils/getTalksJson";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";

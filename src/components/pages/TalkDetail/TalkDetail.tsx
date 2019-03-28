@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Link } from "react-router-dom";
-import { getTalkJson } from "../../../utils/getCityJson";
+import { getTalkJson } from "../../../utils/getTalksJson";
 import Tag from "../../atoms/Tag/Tag";
 import Text from "../../atoms/Text/Text";
 import LinkCard from "../../molecules/LinkCard/LinkCard";
@@ -36,7 +36,7 @@ const TalkDetail: React.FC<RouteComponentProps<{ date: string }>> = ({
           </Text>
         </div>
         <div className={cx("tag")}>
-          {talk.tags.map((tag) => (
+          {talk.tags.map((tag: string) => (
             <Tag>{tag}</Tag>
           ))}
         </div>

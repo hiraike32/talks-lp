@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router";
-import { getCountryJson } from "../../../utils/getCityJson";
+import { getCountryJson } from "../../../utils/getTalksJson";
 import Map from "./Map";
 
 const story = storiesOf("organisms", module);

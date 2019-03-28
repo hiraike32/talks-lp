@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import { getPagedCountryTalkJson } from "../../../utils/getCityJson";
+import { getPagedCountryTalkJson } from "../../../utils/getTalksJson";
 import CityMap from "../../organisms/CityMap/CityMap";
 import TalkList from "../../organisms/TalkList/TalkList";
 import styles from "./TalkCity.scss";
