@@ -7,6 +7,7 @@ import TalkCity from "./TalkCity/TalkCity";
 import TalkDetail from "./TalkDetail/TalkDetail";
 import TalkMap from "./TalkMap/TalkMap";
 import Top from "./Top/Top";
+import Video from "./Video/Video";
 
 const Root: React.FC = () => {
   const [isMenuModal, setMenuModal] = useState(false);
@@ -24,6 +25,7 @@ const Root: React.FC = () => {
           component={TalkDetail}
         />
         <Route exact={true} path="/posts/:page" component={Post} />
+        <Route exact={true} path="/videos/:page" component={Video} />
       </Switch>
     </Router>
   );

@@ -51,7 +51,7 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
       <div className={cx("pager")}>
         <Pager
           allPage={Math.ceil(posts.length / 2)}
-          selectedPage={selectedPage as number}
+          selectedPage={selectedPage}
         />
       </div>
     </div>

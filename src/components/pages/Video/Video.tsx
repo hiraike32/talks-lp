@@ -10,6 +10,7 @@ import { getPagedVideoJson } from "../../../utils/getVideosJson";
 import Text from "../../atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import VideoCard from "../../molecules/VideoCard/VideoCard";
+import ScrollToTop from "../../organisms/ScrollTop/ScrollTop";
 import styles from "./Video.scss";
 
 const cx = classNames.bind(styles);
@@ -19,11 +20,12 @@ const Video: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [Videos, setVideos] = React.useState(getPagedVideoJson);
+  const [videos, setVideos] = React.useState(getPagedVideoJson);
   const selectedPage: number = Number(match.params.page);
 
   return (
     <div className={cx("container")}>
+      <ScrollToTop />
       <div className={cx("head")}>
         <Link to="/">
           <FontAwesomeIcon
@@ -37,22 +39,16 @@ const Video: React.FC<RouteComponentProps<{ page: string }>> = ({
         </Text>
       </div>
       <div className={cx("Videos")}>
-        <div className={cx("column")}>
-          {Videos[selectedPage - 1].map((Video: VideoJson) => (
-            <VideoCard {...Video} />
-          ))}
-        </div>
-        <div className={cx("column")}>
-          {Videos[selectedPage].map((Video: VideoJson) => (
-            <VideoCard {...Video} />
-          ))}
-        </div>
+        {videos[selectedPage - 1].map((video: VideoJson) => {
+          return (
+            <span key={video.date}>
+              <VideoCard {...video} />
+            </span>
+          );
+        })}
       </div>
       <div className={cx("pager")}>
-        <Pager
-          allPage={Math.ceil(Videos.length / 2)}
-          selectedPage={selectedPage as number}
-        />
+        <Pager allPage={videos.length} selectedPage={selectedPage} />
       </div>
     </div>
   );

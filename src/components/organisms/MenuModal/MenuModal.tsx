@@ -66,7 +66,7 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
         <div className={cx("menuItem")}>
           <NavLink
             exact={true}
-            to="/videos"
+            to="/videos/1"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
