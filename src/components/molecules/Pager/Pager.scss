@@ -14,6 +14,12 @@
   opacity: 0.5;
 }
 
+.disable {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+}
+
 .pageNumber {
   text-decoration: none;
   padding: 0.5rem;

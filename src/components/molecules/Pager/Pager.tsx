@@ -52,24 +52,19 @@ const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
 
   return (
     <div className={cx("container")}>
-      {selectedPage > 1 && (
-        <>
-          <Link to="1">
-            <FontAwesomeIcon
-              icon={faAngleDoubleLeft}
-              className={cx("icon")}
-              size="2x"
-            />
-          </Link>
-          <Link to={`${selectedPage - 1 > 0 ? selectedPage - 1 : 1}`}>
-            <FontAwesomeIcon
-              icon={faAngleLeft}
-              className={cx("icon")}
-              size="2x"
-            />
-          </Link>
-        </>
-      )}
+      <Link to="1" className={cx({ disable: selectedPage <= 1 })}>
+        <FontAwesomeIcon
+          icon={faAngleDoubleLeft}
+          className={cx("icon")}
+          size="2x"
+        />
+      </Link>
+      <Link
+        to={`${selectedPage - 1 > 0 ? selectedPage - 1 : 1}`}
+        className={cx({ disable: selectedPage <= 1 })}
+      >
+        <FontAwesomeIcon icon={faAngleLeft} className={cx("icon")} size="2x" />
+      </Link>
       {pages.map((page: number) => (
         <Link
           to={`${page}`}
@@ -81,26 +76,22 @@ const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
           </span>
         </Link>
       ))}
-      {selectedPage !== allPage && (
-        <>
-          <Link
-            to={`${selectedPage + 1 < allPage ? selectedPage + 1 : allPage}`}
-          >
-            <FontAwesomeIcon
-              icon={faAngleRight}
-              className={cx("icon")}
-              size="2x"
-            />
-          </Link>
-          <Link to={`${allPage}`}>
-            <FontAwesomeIcon
-              icon={faAngleDoubleRight}
-              className={cx("icon")}
-              size="2x"
-            />
-          </Link>
-        </>
-      )}
+      <Link
+        to={`${selectedPage + 1 < allPage ? selectedPage + 1 : allPage}`}
+        className={cx({ disable: selectedPage === allPage })}
+      >
+        <FontAwesomeIcon icon={faAngleRight} className={cx("icon")} size="2x" />
+      </Link>
+      <Link
+        to={`${allPage}`}
+        className={cx({ disable: selectedPage === allPage })}
+      >
+        <FontAwesomeIcon
+          icon={faAngleDoubleRight}
+          className={cx("icon")}
+          size="2x"
+        />
+      </Link>
     </div>
   );
 };
