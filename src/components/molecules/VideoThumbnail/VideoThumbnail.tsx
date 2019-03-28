@@ -17,7 +17,7 @@ const VideoThumbnail: React.FC<Props> = ({ href }) => (
   <a href={href} className={cx("link")} target="_blank">
     <div className={cx("container")}>
       <div className={cx("content")}>
-        <FontAwesomeIcon icon={faPlayCircle} size="3x" className={cx("icon")} />
+        <FontAwesomeIcon icon={faPlayCircle} size="5x" className={cx("icon")} />
       </div>
       <img src={videoFixture} />
     </div>

@@ -1,4 +1,4 @@
-interface VideoJson {
+export interface VideoJson {
   title: string;
   abstract: string;
   type: "video";
