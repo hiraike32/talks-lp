@@ -52,19 +52,27 @@ const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
 
   return (
     <div className={cx("container")}>
-      <Link to="/1">
-        <FontAwesomeIcon
-          icon={faAngleDoubleLeft}
-          className={cx("icon")}
-          size="2x"
-        />
-      </Link>
-      <Link to={`/${selectedPage - 1 > 0 ? selectedPage - 1 : 1}`}>
-        <FontAwesomeIcon icon={faAngleLeft} className={cx("icon")} size="2x" />
-      </Link>
+      {selectedPage > 1 && (
+        <>
+          <Link to="1">
+            <FontAwesomeIcon
+              icon={faAngleDoubleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+          <Link to={`${selectedPage - 1 > 0 ? selectedPage - 1 : 1}`}>
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+        </>
+      )}
       {pages.map((page: number) => (
         <Link
-          to={`/${page}`}
+          to={`${page}`}
           key={`pager${page}`}
           className={cx("pageNumber", { selected: selectedPage === page })}
         >
@@ -73,16 +81,26 @@ const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
           </span>
         </Link>
       ))}
-      <Link to={`/${selectedPage + 1 < allPage ? selectedPage + 1 : allPage}`}>
-        <FontAwesomeIcon icon={faAngleRight} className={cx("icon")} size="2x" />
-      </Link>
-      <Link to={`/${allPage}`}>
-        <FontAwesomeIcon
-          icon={faAngleDoubleRight}
-          className={cx("icon")}
-          size="2x"
-        />
-      </Link>
+      {selectedPage !== allPage && (
+        <>
+          <Link
+            to={`${selectedPage + 1 < allPage ? selectedPage + 1 : allPage}`}
+          >
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+          <Link to={`${allPage}`}>
+            <FontAwesomeIcon
+              icon={faAngleDoubleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+        </>
+      )}
     </div>
   );
 };

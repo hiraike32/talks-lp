@@ -4,7 +4,7 @@ import { PostJson } from "../types/posts.js";
 export const getPagedPostJson = () => {
   const pagedPostJson: PostJson[][] = [];
   let postsJson: PostJson[] = [];
-  const pagedContent = 6;
+  const pagedContent = 3;
   posts.map((post: PostJson) => {
     postsJson.push(post);
     if (postsJson.length >= pagedContent) {

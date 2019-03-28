@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../organisms/Header/Header";
 import MenuModal from "../organisms/MenuModal/MenuModal";
+import Post from "./Post/Post";
 import TalkCity from "./TalkCity/TalkCity";
 import TalkDetail from "./TalkDetail/TalkDetail";
 import TalkMap from "./TalkMap/TalkMap";
@@ -22,6 +23,7 @@ const Root: React.FC = () => {
           path="/talks/:country/:date"
           component={TalkDetail}
         />
+        <Route exact={true} path="/posts/:page" component={Post} />
       </Switch>
     </Router>
   );
