@@ -78,12 +78,12 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
         <div className={cx("menuItem")}>
           <NavLink
             exact={true}
-            to="/contact"
+            to="/about"
             activeClassName={cx("active")}
             onClick={() => setMenuModal(false)}
           >
             <Text light={true} type="h2">
-              CONTACT
+              ABOUT
             </Text>
           </NavLink>
         </div>

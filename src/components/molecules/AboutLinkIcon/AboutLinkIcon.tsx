@@ -28,14 +28,20 @@ export interface Props {
   href: string;
 }
 
+const iconSize = "3x";
+
 const AboutLinkIcon: React.FC<Props> = ({ type, href }) => (
   <>
     {type === "twitter" && (
       <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faTwitterSquare}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
           mask="twitter"
         />
@@ -43,50 +49,70 @@ const AboutLinkIcon: React.FC<Props> = ({ type, href }) => (
     )}
     {type === "facebook" && (
       <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faFacebookSquare}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
         />
       </a>
     )}
     {type === "github" && (
       <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faGithubSquare}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
         />
       </a>
     )}
     {type === "linkedin" && (
       <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faLinkedin}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
         />
       </a>
     )}
     {type === "medium" && (
       <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faMedium}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
         />
       </a>
     )}
     {type === "email" && (
-      <a href={href} className={cx("link")} target="_blank">
-        <FontAwesomeIcon icon={faSquare} size="2x" className={cx("white")} />
+      <a href={`mailto:${href}`} className={cx("link")}>
+        <FontAwesomeIcon
+          icon={faSquare}
+          size={iconSize}
+          className={cx("white")}
+        />
         <FontAwesomeIcon
           icon={faEnvelopeSquare}
-          size="2x"
+          size={iconSize}
           className={cx("icon", type)}
         />
       </a>

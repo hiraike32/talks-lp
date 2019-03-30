@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../organisms/Header/Header";
 import MenuModal from "../organisms/MenuModal/MenuModal";
+import About from "./About/About";
 import Post from "./Post/Post";
 import TalkCity from "./TalkCity/TalkCity";
 import TalkDetail from "./TalkDetail/TalkDetail";
@@ -26,6 +27,7 @@ const Root: React.FC = () => {
         />
         <Route exact={true} path="/posts/:page" component={Post} />
         <Route exact={true} path="/videos/:page" component={Video} />
+        <Route exact={true} path="/about" component={About} />
       </Switch>
     </Router>
   );
