@@ -5,11 +5,13 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { Link } from "react-router-dom";
 import photo from "../../../image/erickwendel.png";
+import { getPagedProjectJson } from "../../../utils/getProjectsJson";
 import Tag from "../../atoms/Tag/Tag";
 import Text from "../../atoms/Text/Text";
 import AboutLinkIcon, {
   Props as LinkIconProps,
 } from "../../molecules/AboutLinkIcon/AboutLinkIcon";
+import ProjectCard from "../../molecules/ProjectCard/ProjectCard";
 import styles from "./About.scss";
 
 const cx = classNames.bind(styles);
@@ -26,7 +28,7 @@ const linkIcons: Array<{ type: LinkIconProps["type"]; href: string }> = [
 const tags = ["#opensource", "#nodejs", "#typescript"];
 
 const About: React.FC = ({}) => {
-  const [projects, setProjects] = React.useState();
+  const [projects, setProjects] = React.useState(getPagedProjectJson());
 
   return (
     <div className={cx("container")}>
@@ -109,6 +111,22 @@ const About: React.FC = ({}) => {
             in Brazil and Americas, working as voluntary Leader of NodeBR,
             Javascript São Paulo and Nerdzão Communities.
           </Text>
+        </div>
+      </div>
+      <div className={cx("rightColumn")}>
+        <div className={cx("project")}>
+          <Text color="lime" type="h2" bold={true} italic={true}>
+            Projects
+          </Text>
+        </div>
+        <div className={cx("projects")}>
+          {projects.map((project) => {
+            return (
+              <span key={project.date}>
+                <ProjectCard {...project} />
+              </span>
+            );
+          })}
         </div>
       </div>
     </div>

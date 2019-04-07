@@ -10,6 +10,10 @@
   padding-right: 5rem;
 }
 
+.rightColumn {
+  width: 50%;
+}
+
 .head {
   display: flex;
   align-items: center;
@@ -74,4 +78,9 @@
 
 .linkTitle:hover {
   opacity: 0.5;
+}
+
+.projects {
+  height: calc(100vh - 20rem);
+  overflow: scroll;
 }
