@@ -30,13 +30,13 @@ const About: React.FC = ({}) => {
 
   return (
     <div className={cx("container")}>
-      <div className={cx("column")}>
+      <div className={cx("leftColumn")}>
         <div className={cx("head")}>
           <Link to="/">
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
-              className={cx("arrow")}
+              className={cx("arrow", "icon")}
             />
           </Link>
           <Text color="lime" type="h2" bold={true} italic={true}>
@@ -61,14 +61,53 @@ const About: React.FC = ({}) => {
           ))}
         </div>
         <div className={cx("titles")}>
-          <Text type="h3" color="lime">
-            Software Consultant
-          </Text>
-          <Text type="h3" color="lime">
-            Microsoft MVP
-          </Text>
-          <Text type="h3" color="lime">
-            Google Dev Expert
+          <div className={cx("title")}>
+            <Text type="h3" color="lime">
+              Software Consultant
+            </Text>
+          </div>
+          <div className={cx("title")}>
+            <Text type="h3" color="lime">
+              Microsoft MVP
+            </Text>
+          </div>
+          <div className={cx("title")}>
+            <Text type="h3" color="lime">
+              Google Dev Expert
+            </Text>
+          </div>
+        </div>
+        <div className={cx("profile")}>
+          <Text>
+            Erick Wendel is a Speaker, Software Consultant and community
+            Co-organizer in Brazil. <br />
+            Named by Microsoft as{" "}
+            <Text color="lime">
+              <a
+                href="https://mvp.microsoft.com/pt-br/PublicProfile/5002509?fullName=Erick%20%20%20Wendel"
+                target="_blank"
+                className={cx("linkTitle")}
+              >
+                Most Valuable Professional
+              </a>
+            </Text>
+            , and by Google as{" "}
+            <Text color="lime">
+              <a
+                href="https://developers.google.com/programs/experts/directory/"
+                target="_blank"
+                className={cx("linkTitle")}
+              >
+                Google Developer Expert
+              </a>
+            </Text>
+            , a specialist in Node.js and Javascript Applications.
+            <br /> He is a Software Independent Architect who helps companies to
+            make better and cheaper applications using Serverless architectures,
+            Container based applications, and Hybrid Cloud solutions. <br />
+            He has experience speaking and teaching at the biggest conferences
+            in Brazil and Americas, working as voluntary Leader of NodeBR,
+            Javascript São Paulo and Nerdzão Communities.
           </Text>
         </div>
       </div>

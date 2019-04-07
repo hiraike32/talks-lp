@@ -5,8 +5,9 @@
   display: flex;
 }
 
-.column {
+.leftColumn {
   width: 50%;
+  padding-right: 5rem;
 }
 
 .head {
@@ -14,8 +15,11 @@
   align-items: center;
 }
 
-.arrow {
+.icon {
   color: $fontLime;
+}
+
+.arrow {
   margin-right: 1rem;
   vertical-align: super;
 }
@@ -49,4 +53,25 @@
 
 .tags span {
   margin: 0.5rem;
+}
+
+.titles {
+  margin-top: 1.5rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+}
+
+.profile {
+  margin-top: 1.5rem;
+}
+
+.linkTitle {
+  color: $fontLime;
+  text-decoration: none;
+}
+
+.linkTitle:hover {
+  opacity: 0.5;
 }
