@@ -10,7 +10,7 @@
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "start": "webpack-dev-server --config webpack.dev.js",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "deploy": "yarn build && gh-pages -d dist",
+    "deploy": "yarn build && rm -r dist/talks-lp && gh-pages -d dist",
     "lint": "tslint --fix './src/**/*.{ts,tsx}' && stylelint --fix './src/**/*.{css,scss}'"
   },
   "husky": {

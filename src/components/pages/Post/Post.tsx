@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { Link } from "react-router-dom";
+import postJson from "../../../resource/posts.json";
 import { PostJson } from "../../../types/posts";
 import { getPagedPostJson } from "../../../utils/getPostsJson";
 import Text from "../../atoms/Text/Text";
@@ -19,7 +20,7 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [posts, setPosts] = React.useState(getPagedPostJson);
+  const [posts, setPosts] = React.useState(getPagedPostJson(postJson, 6));
   const selectedPage: number = Number(match.params.page);
 
   return (
@@ -37,22 +38,14 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
         </Text>
       </div>
       <div className={cx("posts")}>
-        <div className={cx("column")}>
-          {posts[selectedPage - 1].map((post: PostJson) => (
+        {posts[selectedPage - 1].map((post: PostJson) => (
+          <div className={cx("post")}>
             <PostCard {...post} />
-          ))}
-        </div>
-        <div className={cx("column")}>
-          {posts[selectedPage].map((post: PostJson) => (
-            <PostCard {...post} />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
       <div className={cx("pager")}>
-        <Pager
-          allPage={Math.ceil(posts.length / 2)}
-          selectedPage={selectedPage}
-        />
+        <Pager allPage={Math.ceil(posts.length)} selectedPage={selectedPage} />
       </div>
     </div>
   );

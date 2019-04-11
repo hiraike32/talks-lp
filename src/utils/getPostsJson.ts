@@ -1,11 +1,12 @@
-import posts from "../resource/posts.json";
 import { PostJson } from "../types/posts.js";
 
-export const getPagedPostJson = () => {
+export const getPagedPostJson = (
+  postJson: PostJson[],
+  pagedContent: number,
+) => {
   const pagedPostJson: PostJson[][] = [];
   let postsJson: PostJson[] = [];
-  const pagedContent = 3;
-  posts.map((post: PostJson) => {
+  postJson.map((post: PostJson) => {
     postsJson.push(post);
     if (postsJson.length >= pagedContent) {
       pagedPostJson.push(postsJson);
