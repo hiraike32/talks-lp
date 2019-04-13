@@ -17,9 +17,6 @@ const SearchBox: React.FC<Props> = ({ items, setItem }) => {
   return (
     <div className={cx("container")}>
       <input type="text" id="search" className={cx("input")} />
-      {/* <label htmlFor="search" className={cx("label")}>
-        テキスト
-      </label> */}
       <span className={cx("icons")}>
         <FontAwesomeIcon
           icon={faSquare}
