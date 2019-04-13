@@ -4,3 +4,34 @@
   display: flex;
   align-items: center;
 }
+
+.input {
+  background: $backgroundGray;
+  border: none;
+  border-bottom: 0.25rem solid $fontWhite;
+  color: $fontWhite;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.icons {
+  position: relative;
+  margin-left: 1.5rem;
+}
+
+.squareIcon {
+  color: $fontLime;
+}
+
+.searchIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
