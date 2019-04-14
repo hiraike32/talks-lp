@@ -6,30 +6,30 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import postJson from "../../../resource/posts.json";
-import { PostJson } from "../../../types/posts";
-import { getPagedPostJson } from "../../../utils/getPostsJson";
+import talkJson from "../../../resource/Talks.json";
+import { TalkJson } from "../../../types/talks";
+import { getPagedTalkJson } from "../../../utils/getTalksJson";
 import Text from "../../atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
-import PostCard from "../../molecules/PostCard/PostCard";
 import SearchBox from "../../molecules/SearchBox/SearchBox";
-import styles from "./Post.scss";
+import TalkCard from "../../molecules/TalkCard/TalkCard";
+import styles from "./Talk.scss";
 
 const cx = classNames.bind(styles);
 library.add(faArrowLeft);
 
-const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
+const Talk: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [posts, setPosts] = React.useState(getPagedPostJson(postJson));
-  const [searchedPosts, setSearchedPosts] = React.useState(postJson);
+  const [talks, setTalks] = React.useState(getPagedTalkJson(talkJson));
+  const [searchedTalks, setSearchedTalks] = React.useState(talkJson);
   const selectedPage: number = Number(match.params.page);
 
   React.useEffect(() => {
-    setPosts(getPagedPostJson(searchedPosts));
-    history.push("/posts/1");
-  }, [searchedPosts]);
+    setTalks(getPagedTalkJson(searchedTalks));
+    history.push("/talks/1");
+  }, [searchedTalks]);
 
   return (
     <div className={cx("container")}>
@@ -42,31 +42,31 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
           />
         </Link>
         <Text color="lime" type="h2" bold={true} italic={true}>
-          Posts
+          Talks
         </Text>
       </div>
       <div className={cx("searchBox")}>
-        <SearchBox masterItems={postJson} setItem={setSearchedPosts} />
+        <SearchBox masterItems={talkJson} setItem={setSearchedTalks} />
       </div>
-      <div className={cx("postContent")}>
-        {posts.length === 0 ? (
-          <div className={cx("noPost")}>
-            <Text type="h1">Posts not found</Text>
+      <div className={cx("talkContent")}>
+        {talks.length === 0 ? (
+          <div className={cx("noTalk")}>
+            <Text type="h1">Talks not found</Text>
           </div>
         ) : (
           <>
-            <div className={cx("posts")}>
-              {posts[selectedPage * 2 - 2].map((post: PostJson) => (
-                <div className={cx("post")}>
-                  <PostCard {...post} />
+            <div className={cx("talks")}>
+              {talks[selectedPage * 2 - 2].map((talk: TalkJson) => (
+                <div className={cx("talk")}>
+                  <TalkCard {...talk} />
                 </div>
               ))}
             </div>
-            <div className={cx("posts")}>
-              {posts[selectedPage * 2 - 1] &&
-                posts[selectedPage * 2 - 1].map((post: PostJson) => (
-                  <div className={cx("post")}>
-                    <PostCard {...post} />
+            <div className={cx("talks")}>
+              {talks[selectedPage * 2 - 1] &&
+                talks[selectedPage * 2 - 1].map((talk: TalkJson) => (
+                  <div className={cx("talk")}>
+                    <TalkCard {...talk} />
                   </div>
                 ))}
             </div>
@@ -75,7 +75,7 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
       </div>
       <div className={cx("pager")}>
         <Pager
-          allPage={Math.ceil(posts.length / 2)}
+          allPage={Math.ceil(talks.length / 2)}
           selectedPage={selectedPage}
         />
       </div>
@@ -83,4 +83,4 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   );
 };
 
-export default withRouter(Post);
+export default withRouter(Talk);

@@ -1,7 +1,7 @@
 import talks from "../resource/talks.json";
 import { CityJson, CountryJson, TalkJson } from "../types/talks.js";
 
-export const getPagedTalkJson = () => {
+export const getPagedTalkJson = (talks: TalkJson[]) => {
   const pagedTalkJson: TalkJson[][] = [];
   let talksJson: TalkJson[] = [];
   const pagedContent = 6;

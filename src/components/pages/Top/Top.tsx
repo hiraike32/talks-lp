@@ -1,6 +1,7 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import topImage from "../../../image/top.jpg";
+import talkJson from "../../../resource/Talks.json";
 import { getCountryJson, getPagedTalkJson } from "../../../utils/getTalksJson";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
@@ -35,7 +36,10 @@ const Top: React.FC = () => {
           <WorldTalkList countryJson={countryJson} />
         </div>
         <div className={cx("talkList")}>
-          <TalkList title="Recent Talks" pagedTalkJson={getPagedTalkJson()} />
+          <TalkList
+            title="Recent Talks"
+            pagedTalkJson={getPagedTalkJson(talkJson)}
+          />
         </div>
       </div>
     </div>
