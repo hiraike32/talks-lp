@@ -11,6 +11,7 @@ import { getPagedPostJson } from "../../../utils/getPostsJson";
 import Text from "../../atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import PostCard from "../../molecules/PostCard/PostCard";
+import SearchBox from "../../molecules/SearchBox/SearchBox";
 import styles from "./Post.scss";
 
 const cx = classNames.bind(styles);
@@ -20,8 +21,13 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [posts, setPosts] = React.useState(getPagedPostJson(postJson, 6));
+  const [posts, setPosts] = React.useState(getPagedPostJson(postJson));
+  const [searchedPosts, setSearchedPosts] = React.useState(postJson);
   const selectedPage: number = Number(match.params.page);
+
+  React.useEffect(() => {
+    setPosts(getPagedPostJson(searchedPosts));
+  }, [searchedPosts]);
 
   return (
     <div className={cx("container")}>
@@ -37,15 +43,39 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
           Posts
         </Text>
       </div>
-      <div className={cx("posts")}>
-        {posts[selectedPage - 1].map((post: PostJson) => (
-          <div className={cx("post")}>
-            <PostCard {...post} />
+      <div className={cx("searchBox")}>
+        <SearchBox masterItems={postJson} setItem={setSearchedPosts} />
+      </div>
+      <div className={cx("postContent")}>
+        {posts.length === 0 ? (
+          <div className={cx("noPost")}>
+            <Text type="h1">Posts not found</Text>
           </div>
-        ))}
+        ) : (
+          <>
+            <div className={cx("posts")}>
+              {posts[selectedPage * 2 - 2].map((post: PostJson) => (
+                <div className={cx("post")}>
+                  <PostCard {...post} />
+                </div>
+              ))}
+            </div>
+            <div className={cx("posts")}>
+              {posts[selectedPage * 2 - 1] &&
+                posts[selectedPage * 2 - 1].map((post: PostJson) => (
+                  <div className={cx("post")}>
+                    <PostCard {...post} />
+                  </div>
+                ))}
+            </div>
+          </>
+        )}
       </div>
       <div className={cx("pager")}>
-        <Pager allPage={Math.ceil(posts.length)} selectedPage={selectedPage} />
+        <Pager
+          allPage={Math.ceil(posts.length / 2)}
+          selectedPage={selectedPage}
+        />
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 @import "../../../styles/all.scss";
 
 .container {
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
 .input {
@@ -11,6 +10,7 @@
   border-bottom: 0.25rem solid $fontWhite;
   color: $fontWhite;
   padding: 1rem;
+  padding-left: 3rem;
   font-size: 1.5rem;
 }
 
@@ -18,20 +18,11 @@
   outline: none;
 }
 
-.icons {
-  position: relative;
-  margin-left: 1.5rem;
-}
-
-.squareIcon {
-  color: $fontLime;
-}
-
 .searchIcon {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0;
-  left: 0;
+  left: 1rem;
   margin: auto;
+  color: $fontWhite;
 }

@@ -13,5 +13,5 @@ const story = storiesOf("molecules", module)
   ));
 
 story.add("SearchBox", () => (
-  <SearchBox items={postJson} setItem={action("setItem")} />
+  <SearchBox masterItems={postJson} setItem={action("setItem")} />
 ));
