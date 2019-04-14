@@ -9,26 +9,36 @@ const cx = classNames.bind(styles);
 library.add(faSearch, faSquare);
 
 interface Props {
-  items: any[];
-  setItem: () => void;
+  masterItems: any[];
+  setItem: React.Dispatch<any>;
 }
 
-const SearchBox: React.FC<Props> = ({ items, setItem }) => {
+const SearchBox: React.FC<Props> = ({ masterItems, setItem }) => {
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const searchedWord = e.currentTarget.value.toLowerCase();
+    const searchedItems = masterItems.filter((item: any) => {
+      const tagIncluded = item.tags.map((tag: string) => {
+        return tag.toLowerCase().indexOf(searchedWord) >= 0;
+      });
+      if (
+        item.title.toLowerCase().indexOf(searchedWord) >= 0 ||
+        tagIncluded.indexOf(true) >= 0
+      ) {
+        return item;
+      }
+    });
+    setItem(searchedItems);
+  };
+
   return (
     <div className={cx("container")}>
-      <input type="text" id="search" className={cx("input")} />
-      <span className={cx("icons")}>
-        <FontAwesomeIcon
-          icon={faSquare}
-          className={cx("squareIcon")}
-          size="4x"
-        />
-        <FontAwesomeIcon
-          icon={faSearch}
-          className={cx("searchIcon")}
-          size="2x"
-        />
-      </span>
+      <input
+        type="text"
+        id="search"
+        className={cx("input")}
+        onChange={handleSearch}
+      />
+      <FontAwesomeIcon icon={faSearch} className={cx("searchIcon")} size="lg" />
     </div>
   );
 };

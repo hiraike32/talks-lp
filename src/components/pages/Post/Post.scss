@@ -19,14 +19,25 @@
   opacity: 0.5;
 }
 
-.posts {
+.searchBox {
+  padding: 2rem 2.5rem 0;
+}
+
+.postContent {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+}
+
+.noPost {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.posts {
+  width: 50%;
 }
 
 .post {
-  width: 50%;
   padding: 2rem;
   align-self: stretch;
 }
