@@ -21,10 +21,14 @@ const Root: React.FC = () => {
         <Route exact={true} path="/" component={Top} />
         <Route exact={true} path="/talks" component={TalkMap} />
         <Route exact={true} path="/talks/:page" component={Talk} />
-        <Route exact={true} path="/talks/:country" component={TalkCity} />
         <Route
           exact={true}
-          path="/talks/:country/:date"
+          path="/talks/country/:country"
+          component={TalkCity}
+        />
+        <Route
+          exact={true}
+          path="/talks/country/:country/:date"
           component={TalkDetail}
         />
         <Route exact={true} path="/posts/:page" component={Post} />

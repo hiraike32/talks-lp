@@ -1,6 +1,5 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import { CountryJson } from "../../../types/talks";
 import { getCountryJson } from "../../../utils/getTalksJson";
 import Text from "../../atoms/Text/Text";
 import Map from "../../organisms/Map/Map";

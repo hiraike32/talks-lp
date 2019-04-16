@@ -6,7 +6,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
-import talkJson from "../../../resource/Talks.json";
+import talkJson from "../../../resource/talks.json";
 import { TalkJson } from "../../../types/talks";
 import { getPagedTalkJson } from "../../../utils/getTalksJson";
 import Text from "../../atoms/Text/Text";
