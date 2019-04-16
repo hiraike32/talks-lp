@@ -15,7 +15,7 @@ const TalkTotalCard: React.FC<CountryJson> = ({ country, total }) => (
   <div className={cx("container")}>
     <Text type="h3">{country}</Text>
     <Text type="h3">{total}</Text>
-    <Button to={`talks/${country}`} color="lime">
+    <Button to={`talks/country/${country}`} color="lime">
       <Text type="h3">Detail</Text>
       <FontAwesomeIcon icon={faArrowRight} />
     </Button>
