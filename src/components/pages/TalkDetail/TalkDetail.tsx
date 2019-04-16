@@ -24,7 +24,7 @@ const TalkDetail: React.FC<RouteComponentProps<{ date: string }>> = ({
     <div className={cx("container")}>
       <div className={cx("leftColumn")}>
         <div className={cx("title")}>
-          <Link to={`/talks/${talk.location.country}`}>
+          <Link to={`/talks/1`}>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"

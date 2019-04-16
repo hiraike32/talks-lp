@@ -45,7 +45,7 @@ const Map: React.FC<Props> = ({ countryJson }) => {
       <g className="markers">
         {countryJson &&
           countryJson.map((city: CountryJson) => (
-            <Link to={`/talks/${city.country}`} key={city.country}>
+            <Link to={`/talks/country/${city.country}`} key={city.country}>
               <circle
                 // @ts-ignore
                 cx={projection()(city.coordinates)[0]}
