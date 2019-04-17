@@ -1,0 +1,43 @@
+@import "../../../styles/all.scss";
+
+.title {
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.head {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.head div {
+  margin-right: 1.5rem;
+}
+
+.head span {
+  width: 35%;
+}
+
+.arrow {
+  color: $fontLime;
+  margin-right: 1.5rem;
+}
+
+.arrow:hover {
+  opacity: 0.5;
+}
+
+.pager {
+  margin-top: 2.5rem;
+  display: flex;
+}
+
+.pager button {
+  width: 50%;
+  margin: 0 1rem;
+}
+
+.emptyButton {
+  width: 50%;
+}

@@ -1,0 +1,32 @@
+@import "../../../styles/all.scss";
+
+.link {
+  text-decoration: none;
+}
+
+.button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  opacity: 0.5;
+}
+
+//color
+.black {
+  background: $backgroundBlack;
+  color: $fontLime;
+  border: 0.1rem solid $fontLime;
+}
+
+.lime {
+  background: $fontLime;
+  color: $fontWhite;
+}

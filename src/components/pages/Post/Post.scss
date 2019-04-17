@@ -1,0 +1,49 @@
+@import "../../../styles/all.scss";
+
+.container {
+  padding: $pageHightPadding $pageWidthPadding;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  color: $fontLime;
+  margin-right: 1rem;
+  vertical-align: super;
+}
+
+.arrow:hover {
+  opacity: 0.5;
+}
+
+.searchBox {
+  padding: 2rem 2.5rem 0;
+}
+
+.postContent {
+  display: flex;
+}
+
+.noPost {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.posts {
+  width: 50%;
+}
+
+.post {
+  padding: 2rem;
+  align-self: stretch;
+}
+
+.pager {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
