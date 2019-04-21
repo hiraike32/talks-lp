@@ -1,18 +1,19 @@
 import classNames from "classnames/bind";
 import * as React from "react";
+import { RouteComponentProps } from "react-router";
 import topImage from "../../../image/top.jpg";
 import talkJson from "../../../resource/talks.json";
 import { getCountryJson, getPagedTalkJson } from "../../../utils/getTalksJson";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
+import TalkMap from "../../organisms/TalkMap/TalkMap";
 import WorldTalkList from "../../organisms/WorldTalkList/WorldTalkList";
-import TalkMap from "../TalkMap/TalkMap";
 import styles from "./Top.scss";
 
 const cx = classNames.bind(styles);
 
-const Top: React.FC = () => {
+const Top: React.FC<RouteComponentProps> = ({ history }) => {
   const [countryJson, setCountryJson] = React.useState(getCountryJson());
 
   return (
