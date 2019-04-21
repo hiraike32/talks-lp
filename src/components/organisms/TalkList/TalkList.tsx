@@ -16,24 +16,24 @@ library.add(faArrowLeft);
 
 interface Props {
   title: React.ReactNode;
-  to?: string;
+  goBack?: () => void;
   pagedTalkJson: TalkJson[][];
 }
 
-const TalkList: React.FC<Props> = ({ title, to, pagedTalkJson }) => {
+const TalkList: React.FC<Props> = ({ title, goBack, pagedTalkJson }) => {
   const [page, setPage] = React.useState(0);
 
   return (
     <div className={cx("container")}>
       <div className={cx("title")}>
-        {to && (
-          <Link to="/talks">
+        {goBack && (
+          <span onClick={goBack} className={cx("backButton")}>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
               className={cx("arrow")}
             />
-          </Link>
+          </span>
         )}
         <Text type="h2" color="lime" italic={true} bold={true}>
           {title}

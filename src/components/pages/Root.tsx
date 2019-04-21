@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../organisms/Header/Header";
 import MenuModal from "../organisms/MenuModal/MenuModal";
+import TalkMap from "../organisms/TalkMap/TalkMap";
 import About from "./About/About";
 import Post from "./Post/Post";
 import Talk from "./Talk/Talk";
 import TalkCity from "./TalkCity/TalkCity";
 import TalkDetail from "./TalkDetail/TalkDetail";
-import TalkMap from "./TalkMap/TalkMap";
 import Top from "./Top/Top";
 import Video from "./Video/Video";
 
@@ -19,7 +19,6 @@ const Root: React.FC = () => {
       <MenuModal isMenuModal={isMenuModal} setMenuModal={setMenuModal} />
       <Switch>
         <Route exact={true} path="/" component={Top} />
-        <Route exact={true} path="/talks" component={TalkMap} />
         <Route exact={true} path="/talks/:page" component={Talk} />
         <Route
           exact={true}

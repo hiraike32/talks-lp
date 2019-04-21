@@ -33,7 +33,7 @@ const TalkCity: React.FC<RouteComponentProps<{ country: string }>> = ({
               ? pagedCityTalkJson[0][0].location.city
               : match.params.country
           }
-          to={"/talks"}
+          goBack={history.goBack}
           pagedTalkJson={pagedCityTalkJson ? pagedCityTalkJson : pagedTalkJson}
         />
       </div>
