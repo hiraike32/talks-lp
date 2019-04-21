@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 import postJson from "../../../resource/posts.json";
 import { PostJson } from "../../../types/posts";
 import { getPagedPostJson } from "../../../utils/getPostsJson";
@@ -34,13 +33,13 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   return (
     <div className={cx("container")}>
       <div className={cx("head")}>
-        <Link to="/">
+        <span onClick={history.goBack}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="2x"
             className={cx("arrow")}
           />
-        </Link>
+        </span>
         <Text color="lime" type="h2" bold={true} italic={true}>
           Posts
         </Text>

@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import { Link } from "react-router-dom";
 import { VideoJson } from "../../../types/videos";
 import { getPagedVideoJson } from "../../../utils/getVideosJson";
 import Text from "../../atoms/Text/Text";
@@ -27,13 +26,13 @@ const Video: React.FC<RouteComponentProps<{ page: string }>> = ({
     <div className={cx("container")}>
       <ScrollToTop />
       <div className={cx("head")}>
-        <Link to="/">
+        <span onClick={history.goBack}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="2x"
             className={cx("arrow")}
           />
-        </Link>
+        </span>
         <Text color="lime" type="h2" bold={true} italic={true}>
           Videos
         </Text>

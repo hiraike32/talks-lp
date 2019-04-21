@@ -3,7 +3,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import photo from "../../../image/erickwendel.png";
 import { getPagedProjectJson } from "../../../utils/getProjectsJson";
 import Tag from "../../atoms/Tag/Tag";
@@ -27,20 +27,20 @@ const linkIcons: Array<{ type: LinkIconProps["type"]; href: string }> = [
 
 const tags = ["#opensource", "#nodejs", "#typescript"];
 
-const About: React.FC = ({}) => {
+const About: React.FC<RouteComponentProps> = ({ history }) => {
   const [projects, setProjects] = React.useState(getPagedProjectJson());
 
   return (
     <div className={cx("container")}>
       <div className={cx("leftColumn")}>
         <div className={cx("head")}>
-          <Link to="/">
+          <span onClick={history.goBack}>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
               className={cx("arrow", "icon")}
             />
-          </Link>
+          </span>
           <Text color="lime" type="h2" bold={true} italic={true}>
             About
           </Text>
