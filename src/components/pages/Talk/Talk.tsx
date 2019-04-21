@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
+import { Link as span } from "react-router-dom";
 import talkJson from "../../../resource/talks.json";
 import { TalkJson } from "../../../types/talks";
 import { getPagedTalkJson } from "../../../utils/getTalksJson";
@@ -34,13 +34,13 @@ const Talk: React.FC<RouteComponentProps<{ page: string }>> = ({
   return (
     <div className={cx("container")}>
       <div className={cx("head")}>
-        <Link to="/">
+        <span onClick={history.goBack}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="2x"
             className={cx("arrow")}
           />
-        </Link>
+        </span>
         <Text color="lime" type="h2" bold={true} italic={true}>
           Talks
         </Text>

@@ -26,6 +26,7 @@
 .arrow {
   margin-right: 1rem;
   vertical-align: super;
+  cursor: pointer;
 }
 
 .arrow:hover {
@@ -78,9 +79,4 @@
 
 .linkTitle:hover {
   opacity: 0.5;
-}
-
-.projects {
-  height: calc(100vh - 20rem);
-  overflow: scroll;
 }
