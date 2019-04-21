@@ -28,7 +28,7 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
 
   React.useEffect(() => {
     setPosts(getPagedPostJson(searchedPosts));
-    history.push("/posts/1");
+    history.replace("/posts/1");
   }, [searchedPosts]);
 
   return (

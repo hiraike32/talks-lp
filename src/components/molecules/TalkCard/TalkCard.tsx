@@ -10,7 +10,7 @@ const cx = classNames.bind(styles);
 
 const TalkCard: React.FC<TalkJson> = ({ title, event, date, location }) => (
   <div className={cx("container")}>
-    <Link to={`/talks/country/${location.country}/${date}`} replace={true}>
+    <Link to={`/talk/detail/${date}`}>
       <div className={cx("head")}>
         <ColorCircle />
         <Text type="h3">{title}</Text>
