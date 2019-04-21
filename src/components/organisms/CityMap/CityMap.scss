@@ -11,6 +11,7 @@
 
 .mapText {
   display: none;
+  pointer-events: none;
 }
 
 .mapPin:hover + .mapText {
