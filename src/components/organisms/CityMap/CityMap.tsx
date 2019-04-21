@@ -44,7 +44,7 @@ const CityMap: React.FC<Props> = ({
   };
 
   return (
-    <svg width={"100vw"} height={"100vh"} className={cx("svg")}>
+    <svg className={cx("svg")}>
       <g>
         {worldData.map((d: any, i: number) => (
           <path

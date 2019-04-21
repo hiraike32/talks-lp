@@ -27,7 +27,6 @@ const Map: React.FC<Props> = ({ countryJson }) => {
 
   return (
     <svg
-      width={"100vw"}
       height={(getScreenSize() / 100) * 47 + 12}
       className={cx("svg")}
     >
