@@ -3,7 +3,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
-import { Link as span, RouteComponentProps } from "react-router-dom";
+import { RouteComponentProps } from "react-router-dom";
 import photo from "../../../image/erickwendel.png";
 import { getPagedProjectJson } from "../../../utils/getProjectsJson";
 import Tag from "../../atoms/Tag/Tag";

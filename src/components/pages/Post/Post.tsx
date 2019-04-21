@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { withRouter } from "react-router";
-import { Link as span } from "react-router-dom";
 import postJson from "../../../resource/posts.json";
 import { PostJson } from "../../../types/posts";
 import { getPagedPostJson } from "../../../utils/getPostsJson";
