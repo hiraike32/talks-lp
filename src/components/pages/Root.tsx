@@ -26,11 +26,7 @@ const Root: React.FC = () => {
           path="/talks/country/:country"
           component={TalkCity}
         />
-        <Route
-          exact={true}
-          path="/talks/country/:country/:date"
-          component={TalkDetail}
-        />
+        <Route exact={true} path="/talk/detail/:date" component={TalkDetail} />
         <Route exact={true} path="/posts/:page" component={Post} />
         <Route exact={true} path="/videos/:page" component={Video} />
         <Route exact={true} path="/about" component={About} />

@@ -28,7 +28,7 @@ const Talk: React.FC<RouteComponentProps<{ page: string }>> = ({
 
   React.useEffect(() => {
     setTalks(getPagedTalkJson(searchedTalks));
-    history.push("/talks/1");
+    history.replace("/talks/1");
   }, [searchedTalks]);
 
   return (
@@ -83,4 +83,4 @@ const Talk: React.FC<RouteComponentProps<{ page: string }>> = ({
   );
 };
 
-export default withRouter(Talk);
+export default Talk;
