@@ -10,6 +10,7 @@ const cx = classNames.bind(styles);
 
 const TalkCity: React.FC<RouteComponentProps<{ country: string }>> = ({
   match,
+  history,
 }) => {
   const [pagedTalkJson, setPagedTalkJson] = React.useState(
     getPagedCountryTalkJson(match.params.country),

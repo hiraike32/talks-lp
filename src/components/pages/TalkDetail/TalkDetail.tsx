@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
-import { Link } from "react-router-dom";
 import { getTalkJson } from "../../../utils/getTalksJson";
 import Tag from "../../atoms/Tag/Tag";
 import Text from "../../atoms/Text/Text";
@@ -24,13 +23,13 @@ const TalkDetail: React.FC<RouteComponentProps<{ date: string }>> = ({
     <div className={cx("container")}>
       <div className={cx("leftColumn")}>
         <div className={cx("title")}>
-          <Link to={`/talks/1`}>
+          <span onClick={history.goBack} className={cx("backButton")}>
             <FontAwesomeIcon
               icon={faArrowLeft}
               size="2x"
               className={cx("arrow")}
             />
-          </Link>
+          </span>
           <Text type="h2" bold={true} italic={true} color="lime">
             {talk.title}
           </Text>
