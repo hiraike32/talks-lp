@@ -79,6 +79,17 @@ export const getCountryJson = () => {
       });
     }
   });
+  countryJson.sort(
+    (a, b): number => {
+      if (a.total < b.total) {
+        return 1;
+      } else if (a.total >= b.total) {
+        return -1;
+      } else {
+        return 0;
+      }
+    },
+  );
   return countryJson;
 };
 
