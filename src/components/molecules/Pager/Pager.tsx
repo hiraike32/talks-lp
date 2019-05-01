@@ -18,9 +18,10 @@ library.add(faAngleDoubleLeft, faAngleLeft, faAngleDoubleRight, faAngleRight);
 interface Props {
   allPage: number;
   selectedPage: number;
+  setSelectedPage?: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
+const Pager: React.FC<Props> = ({ allPage, selectedPage, setSelectedPage }) => {
   const MAX_PAGER_NUM = 5;
 
   const setPages = () => {
@@ -52,46 +53,114 @@ const Pager: React.FC<Props> = ({ allPage, selectedPage }) => {
 
   return (
     <div className={cx("container")}>
-      <Link to="1" className={cx({ disable: selectedPage <= 1 })}>
-        <FontAwesomeIcon
-          icon={faAngleDoubleLeft}
-          className={cx("icon")}
-          size="2x"
-        />
-      </Link>
-      <Link
-        to={`${selectedPage - 1 > 0 ? selectedPage - 1 : 1}`}
-        className={cx({ disable: selectedPage <= 1 })}
-      >
-        <FontAwesomeIcon icon={faAngleLeft} className={cx("icon")} size="2x" />
-      </Link>
-      {pages.map((page: number) => (
-        <Link
-          to={`${page}`}
-          key={`pager${page}`}
-          className={cx("pageNumber", { selected: selectedPage === page })}
-        >
-          <span>
-            <Text color="lime">{page}</Text>
-          </span>
-        </Link>
-      ))}
-      <Link
-        to={`${selectedPage + 1 < allPage ? selectedPage + 1 : allPage}`}
-        className={cx({ disable: selectedPage === allPage })}
-      >
-        <FontAwesomeIcon icon={faAngleRight} className={cx("icon")} size="2x" />
-      </Link>
-      <Link
-        to={`${allPage}`}
-        className={cx({ disable: selectedPage === allPage })}
-      >
-        <FontAwesomeIcon
-          icon={faAngleDoubleRight}
-          className={cx("icon")}
-          size="2x"
-        />
-      </Link>
+      {setSelectedPage ? (
+        <>
+          <div
+            onClick={() => setSelectedPage(1)}
+            className={cx("divButton", { disable: selectedPage <= 1 })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleDoubleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </div>
+          <div
+            onClick={() => setSelectedPage(selectedPage - 1)}
+            className={cx("divButton", { disable: selectedPage <= 1 })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </div>
+          {pages.map((page: number) => (
+            <div
+              onClick={() => setSelectedPage(page)}
+              key={`pager${page}`}
+              className={cx("pageNumber", "divButton", {
+                selected: selectedPage === page,
+              })}
+            >
+              <span>
+                <Text color="lime">{page}</Text>
+              </span>
+            </div>
+          ))}
+          <div
+            onClick={() => setSelectedPage(selectedPage + 1)}
+            className={cx("divButton", { disable: selectedPage === allPage })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </div>
+          <div
+            onClick={() => setSelectedPage(allPage)}
+            className={cx("divButton", { disable: selectedPage === allPage })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleDoubleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </div>
+        </>
+      ) : (
+        <>
+          <Link to="1" className={cx({ disable: selectedPage <= 1 })}>
+            <FontAwesomeIcon
+              icon={faAngleDoubleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+          <Link
+            to={`${selectedPage - 1}`}
+            className={cx({ disable: selectedPage <= 1 })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleLeft}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+          {pages.map((page: number) => (
+            <Link
+              to={`${page}`}
+              key={`pager${page}`}
+              className={cx("pageNumber", { selected: selectedPage === page })}
+            >
+              <span>
+                <Text color="lime">{page}</Text>
+              </span>
+            </Link>
+          ))}
+          <Link
+            to={`${selectedPage + 1}`}
+            className={cx({ disable: selectedPage === allPage })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+          <Link
+            to={`${allPage}`}
+            className={cx({ disable: selectedPage === allPage })}
+          >
+            <FontAwesomeIcon
+              icon={faAngleDoubleRight}
+              className={cx("icon")}
+              size="2x"
+            />
+          </Link>
+        </>
+      )}
     </div>
   );
 };

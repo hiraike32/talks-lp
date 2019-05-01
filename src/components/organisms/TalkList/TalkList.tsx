@@ -8,6 +8,7 @@ import { getPagedTalksJson } from "../../../utils/getTalksJson";
 import Button from "../../atoms/Button/Button";
 import ColorCircle from "../../atoms/ColorCircle/ColorCircle";
 import Text from "../../atoms/Text/Text";
+import Pager from "../../molecules/Pager/Pager";
 import SearchBox from "../../molecules/SearchBox/SearchBox";
 import TalkCard from "../../molecules/TalkCard/TalkCard";
 import styles from "./TalkList.scss";
@@ -22,15 +23,19 @@ interface Props {
 }
 
 const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
-  const [page, setPage] = React.useState(0);
-  const [talks, setTalks] = React.useState(getPagedTalksJson(talksJson));
-  const [searchedTalks, setSearchedTalks] = React.useState(talksJson);
+  const [selectedPage, setSelectedPage] = React.useState<number>(1);
+  const [talks, setTalks] = React.useState<TalkJson[][]>(
+    getPagedTalksJson(talksJson),
+  );
+  const [searchedTalks, setSearchedTalks] = React.useState<TalkJson[]>(
+    talksJson,
+  );
 
   const totalCount = talksJson.length;
 
   React.useEffect(() => {
     setTalks(getPagedTalksJson(searchedTalks));
-    setPage(0);
+    setSelectedPage(1);
   }, [searchedTalks]);
 
   return (
@@ -50,44 +55,39 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
         </Text>
       </div>
       <div className={cx("TalkList")}>
+        <div className={cx("searchBox")}>
+          <SearchBox masterItems={talksJson} setItem={setSearchedTalks} />
+        </div>
         <div className={cx("head")}>
-          <div className={cx("searchBox")}>
-            <SearchBox masterItems={talksJson} setItem={setSearchedTalks} />
-          </div>
           <ColorCircle />
           <Text bold={true}>Past Talks</Text>
           <ColorCircle color="orange" />
           <Text bold={true}>Talks Future</Text>
         </div>
         <div className={cx("body")}>
-          {talks[page].map((talk: TalkJson) => {
-            return (
-              <span key={talk.title}>
-                <TalkCard {...talk} />
-              </span>
-            );
-          })}
+          {talks.length === 0 ? (
+            <div className={cx("noTalk")}>
+              <Text type="h1">Talks not found</Text>
+            </div>
+          ) : (
+            talks[selectedPage - 1].map((talk: TalkJson) => {
+              return (
+                <span key={talk.title}>
+                  <TalkCard {...talk} />
+                </span>
+              );
+            })
+          )}
         </div>
       </div>
       <div className={cx("pager")}>
-        {page > 0 ? (
-          <Button onClick={() => setPage(page => page - 1)}>
-            <Text type="h3" color="lime">
-              Prev
-            </Text>
-          </Button>
-        ) : (
-          <div className={cx("emptyButton")} />
-        )}
-        {talks.length - 1 > page ? (
-          <Button onClick={() => setPage(page => page + 1)}>
-            <Text type="h3" color="lime">
-              Next
-            </Text>
-          </Button>
-        ) : (
-          <div className={cx("emptyButton")} />
-        )}
+        <div className={cx("pager")}>
+          <Pager
+            allPage={talks.length}
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        </div>
       </div>
     </div>
   );
