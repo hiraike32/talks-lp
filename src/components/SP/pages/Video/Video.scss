@@ -1,0 +1,40 @@
+@import "../../../../styles/all.scss";
+
+.container {
+  padding: $pageHightPadding $pageWidthPadding;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.leftColumn {
+  width: 50%;
+}
+
+.arrow {
+  color: $fontLime;
+  margin-right: 1rem;
+  vertical-align: super;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  opacity: 0.5;
+}
+
+.posts {
+  display: flex;
+}
+
+.column {
+  width: 50%;
+  padding: 1rem;
+}
+
+.pager {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}

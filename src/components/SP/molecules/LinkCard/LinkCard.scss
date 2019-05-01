@@ -1,0 +1,40 @@
+@import "../../../../styles/all.scss";
+
+.link {
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  border: 0.1rem solid $fontLime;
+}
+
+.container:hover {
+  opacity: 0.5;
+}
+
+.container img {
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.content span {
+  margin-bottom: 1rem;
+}
+
+.icon {
+  color: $fontLime;
+}

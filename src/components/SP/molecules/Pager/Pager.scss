@@ -1,0 +1,49 @@
+@import "../../../../styles/all.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.divButton {
+  cursor: pointer;
+}
+
+.icon {
+  color: $fontLime;
+  margin: 0 1rem;
+}
+
+.icon:hover {
+  opacity: 0.5;
+}
+
+.disable {
+  opacity: 0.5;
+  cursor: auto;
+  pointer-events: none;
+}
+
+.pageNumber {
+  text-decoration: none;
+  padding: 0.5rem;
+  border: 0.1rem solid $fontLime;
+  margin: 0 0.5rem;
+  letter-spacing: 0;
+}
+
+.pageNumber:hover {
+  background: $fontLime;
+}
+
+.selected span {
+  color: $fontWhite;
+}
+
+.pageNumber:hover span {
+  color: $fontWhite;
+}
+
+.selected {
+  background: $fontLime;
+}

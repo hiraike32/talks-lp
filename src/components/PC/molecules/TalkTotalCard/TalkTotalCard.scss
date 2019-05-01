@@ -1,0 +1,24 @@
+@import "../../../../styles/all.scss";
+
+.container button span {
+  margin-right: 1rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.1rem solid $fontLime;
+  padding: 1.5rem 0;
+}
+
+.container span:first-child {
+  width: 40%;
+}
+
+.container span:nth-child(2) {
+  width: 30%;
+}
+
+.container a {
+  width: 40%;
+}

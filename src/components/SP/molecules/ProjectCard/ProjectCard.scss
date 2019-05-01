@@ -1,0 +1,44 @@
+@import "../../../../styles/all.scss";
+
+.container {
+  border-bottom: 0.1rem solid $fontLime;
+  padding: 1.5rem 1rem;
+  transition: background-color 0.25s;
+}
+
+.container:hover {
+  background-color: $fontLime;
+}
+
+.tag span {
+  margin: 0.5rem;
+}
+
+.container:hover span {
+  transition: color 0.25s;
+  color: $backgroundBlack;
+}
+
+.container:hover .tag > span {
+  border: 0.1rem solid $backgroundBlack;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.abstract {
+  margin-top: 2rem;
+}
+
+.tag {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.bottom {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
