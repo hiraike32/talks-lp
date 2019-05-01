@@ -1,7 +1,7 @@
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import { MemoryRouter } from "react-router";
-import talkJson from "../../../resource/Talks.json";
+import talkJson from "../../../resource/talks.json";
 import { getPagedTalkJson } from "../../../utils/getTalksJson";
 import TalkList from "./TalkList";
 
