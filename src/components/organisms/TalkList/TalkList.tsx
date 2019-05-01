@@ -8,6 +8,7 @@ import { getPagedTalksJson } from "../../../utils/getTalksJson";
 import Button from "../../atoms/Button/Button";
 import ColorCircle from "../../atoms/ColorCircle/ColorCircle";
 import Text from "../../atoms/Text/Text";
+import SearchBox from "../../molecules/SearchBox/SearchBox";
 import TalkCard from "../../molecules/TalkCard/TalkCard";
 import styles from "./TalkList.scss";
 
@@ -22,7 +23,15 @@ interface Props {
 
 const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
   const [page, setPage] = React.useState(0);
-  const pagedTalksJson = getPagedTalksJson(talksJson);
+  const [talks, setTalks] = React.useState(getPagedTalksJson(talksJson));
+  const [searchedTalks, setSearchedTalks] = React.useState(talksJson);
+
+  const totalCount = talksJson.length;
+
+  React.useEffect(() => {
+    setTalks(getPagedTalksJson(searchedTalks));
+    setPage(0);
+  }, [searchedTalks]);
 
   return (
     <div className={cx("container")}>
@@ -37,18 +46,21 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
           </span>
         )}
         <Text type="h2" color="lime" italic={true} bold={true}>
-          {title}
+          {title} ({totalCount})
         </Text>
       </div>
       <div className={cx("TalkList")}>
         <div className={cx("head")}>
+          <div className={cx("searchBox")}>
+            <SearchBox masterItems={talksJson} setItem={setSearchedTalks} />
+          </div>
           <ColorCircle />
           <Text bold={true}>Past Talks</Text>
           <ColorCircle color="orange" />
           <Text bold={true}>Talks Future</Text>
         </div>
         <div className={cx("body")}>
-          {pagedTalksJson[page].map((talk: TalkJson) => {
+          {talks[page].map((talk: TalkJson) => {
             return (
               <span key={talk.title}>
                 <TalkCard {...talk} />
@@ -59,7 +71,7 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
       </div>
       <div className={cx("pager")}>
         {page > 0 ? (
-          <Button onClick={() => setPage((page) => page - 1)}>
+          <Button onClick={() => setPage(page => page - 1)}>
             <Text type="h3" color="lime">
               Prev
             </Text>
@@ -67,8 +79,8 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
         ) : (
           <div className={cx("emptyButton")} />
         )}
-        {pagedTalksJson.length - 1 > page ? (
-          <Button onClick={() => setPage((page) => page + 1)}>
+        {talks.length - 1 > page ? (
+          <Button onClick={() => setPage(page => page + 1)}>
             <Text type="h3" color="lime">
               Next
             </Text>
