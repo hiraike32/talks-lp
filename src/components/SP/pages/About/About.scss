@@ -1,0 +1,82 @@
+@import "../../../../styles/all.scss";
+
+.container {
+  padding: $pageHightPadding $pageWidthPadding;
+  display: flex;
+}
+
+.leftColumn {
+  width: 50%;
+  padding-right: 5rem;
+}
+
+.rightColumn {
+  width: 50%;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  color: $fontLime;
+}
+
+.arrow {
+  margin-right: 1rem;
+  vertical-align: super;
+  cursor: pointer;
+}
+
+.arrow:hover {
+  opacity: 0.5;
+}
+
+.photo {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.photo img {
+  width: 25rem;
+}
+
+.linkIcons {
+  width: 25rem;
+  display: flex;
+  justify-content: center;
+}
+
+.linkIcon {
+  margin: 1rem;
+}
+
+.tags {
+  display: flex;
+}
+
+.tags span {
+  margin: 0.5rem;
+}
+
+.titles {
+  margin-top: 1.5rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+}
+
+.profile {
+  margin-top: 1.5rem;
+}
+
+.linkTitle {
+  color: $fontLime;
+  text-decoration: none;
+}
+
+.linkTitle:hover {
+  opacity: 0.5;
+}

@@ -1,0 +1,22 @@
+@import "../../../../styles/all.scss";
+
+.svg {
+  width: 100vw;
+}
+
+.mapPin {
+  cursor: pointer;
+}
+
+.mapPin:hover {
+  fill: $hoverLime;
+  z-index: 100;
+}
+
+.mapText {
+  display: none;
+}
+
+.mapPin:hover + .mapText {
+  display: block;
+}

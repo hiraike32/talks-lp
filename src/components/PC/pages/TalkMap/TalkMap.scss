@@ -1,0 +1,14 @@
+@import "../../../../styles/all.scss";
+
+.container {
+  padding-top: $pageHightPadding;
+}
+
+.title {
+  text-align: center;
+}
+
+.map {
+  margin-top: 5rem;
+  border-top: 0.25rem solid $fontLime;
+}
