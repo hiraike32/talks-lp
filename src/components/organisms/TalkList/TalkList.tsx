@@ -3,8 +3,8 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { TalkJson } from "../../../types/talks";
+import { getPagedTalksJson } from "../../../utils/getTalksJson";
 import Button from "../../atoms/Button/Button";
 import ColorCircle from "../../atoms/ColorCircle/ColorCircle";
 import Text from "../../atoms/Text/Text";
@@ -17,11 +17,12 @@ library.add(faArrowLeft);
 interface Props {
   title: React.ReactNode;
   goBack?: () => void;
-  pagedTalkJson: TalkJson[][];
+  talksJson: TalkJson[];
 }
 
-const TalkList: React.FC<Props> = ({ title, goBack, pagedTalkJson }) => {
+const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
   const [page, setPage] = React.useState(0);
+  const pagedTalksJson = getPagedTalksJson(talksJson);
 
   return (
     <div className={cx("container")}>
@@ -47,7 +48,7 @@ const TalkList: React.FC<Props> = ({ title, goBack, pagedTalkJson }) => {
           <Text bold={true}>Talks Future</Text>
         </div>
         <div className={cx("body")}>
-          {pagedTalkJson[page].map((talk: TalkJson) => {
+          {pagedTalksJson[page].map((talk: TalkJson) => {
             return (
               <span key={talk.title}>
                 <TalkCard {...talk} />
@@ -66,7 +67,7 @@ const TalkList: React.FC<Props> = ({ title, goBack, pagedTalkJson }) => {
         ) : (
           <div className={cx("emptyButton")} />
         )}
-        {pagedTalkJson.length - 1 > page ? (
+        {pagedTalksJson.length - 1 > page ? (
           <Button onClick={() => setPage((page) => page + 1)}>
             <Text type="h3" color="lime">
               Next

@@ -6,7 +6,10 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import topImage from "../../../image/top.jpg";
 import talkJson from "../../../resource/talks.json";
-import { getCountryJson, getPagedTalkJson } from "../../../utils/getTalksJson";
+import {
+  getPagedTalksJson,
+  getWorldTalksJson,
+} from "../../../utils/getTalksJson";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
@@ -19,7 +22,7 @@ const cx = classNames.bind(styles);
 library.add(faAngleDoubleDown);
 
 const Top: React.FC<RouteComponentProps> = ({ history }) => {
-  const [countryJson, setCountryJson] = React.useState(getCountryJson());
+  const [countryJson, setCountryJson] = React.useState(getWorldTalksJson());
 
   return (
     <div className={cx("container")}>
@@ -45,10 +48,7 @@ const Top: React.FC<RouteComponentProps> = ({ history }) => {
           <WorldTalkList countryJson={countryJson} />
         </div>
         <div className={cx("talkList")}>
-          <TalkList
-            title="Recent Talks"
-            pagedTalkJson={getPagedTalkJson(talkJson)}
-          />
+          <TalkList title="Recent Talks" talksJson={talkJson} />
         </div>
       </div>
     </div>

@@ -1,67 +1,7 @@
 import talks from "../resource/talks.json";
 import { CityJson, CountryJson, TalkJson } from "../types/talks.js";
 
-export const getPagedTalkJson = (talks: TalkJson[]) => {
-  const pagedTalkJson: TalkJson[][] = [];
-  let talksJson: TalkJson[] = [];
-  const pagedContent = 6;
-  talks.map((talk: TalkJson) => {
-    talksJson.push(talk);
-    if (talksJson.length >= pagedContent) {
-      pagedTalkJson.push(talksJson);
-      talksJson = [];
-    }
-  });
-  if (talksJson.length > 0) {
-    pagedTalkJson.push(talksJson);
-  }
-  return pagedTalkJson;
-};
-
-export const getPagedCountryTalkJson = (country: string) => {
-  const pagedTalkJson: TalkJson[][] = [];
-  let talksJson: TalkJson[] = [];
-  const pagedContent = 6;
-  talks.map((talk: TalkJson) => {
-    if (talk.location.country === country) {
-      talksJson.push(talk);
-    }
-    if (talksJson.length >= pagedContent) {
-      pagedTalkJson.push(talksJson);
-      talksJson = [];
-    }
-  });
-  if (talksJson.length > 0) {
-    pagedTalkJson.push(talksJson);
-  }
-  return pagedTalkJson;
-};
-
-export const getPagedCityTalkJson = (
-  city: string,
-  pagedCountryTalkJson: TalkJson[][],
-) => {
-  const pagedTalkJson: TalkJson[][] = [];
-  let talksJson: TalkJson[] = [];
-  const pagedContent = 6;
-  pagedCountryTalkJson.map((countryTalksJson: TalkJson[]) => {
-    countryTalksJson.map((countryTalkJson: TalkJson) => {
-      if (countryTalkJson.location.city === city) {
-        talksJson.push(countryTalkJson);
-      }
-      if (talksJson.length >= pagedContent) {
-        pagedTalkJson.push(talksJson);
-        talksJson = [];
-      }
-    });
-  });
-  if (talksJson.length > 0) {
-    pagedTalkJson.push(talksJson);
-  }
-  return pagedTalkJson;
-};
-
-export const getCountryJson = () => {
+export const getWorldTalksJson = () => {
   const countryJson: CountryJson[] = [];
   talks.map((talk: TalkJson) => {
     let countryExists = false;
@@ -91,6 +31,29 @@ export const getCountryJson = () => {
     },
   );
   return countryJson;
+};
+
+export const getCountryTalksJson = (country: string) => {
+  const talksJson: TalkJson[] = [];
+  talks.map((talk: TalkJson) => {
+    if (talk.location.country === country) {
+      talksJson.push(talk);
+    }
+  });
+  return talksJson;
+};
+
+export const getCityTalksJson = (
+  city: string,
+  countryTalksJson: TalkJson[],
+) => {
+  const talksJson: TalkJson[] = [];
+  countryTalksJson.map((talks: TalkJson) => {
+    if (talks.location.city === city) {
+      talksJson.push(talks);
+    }
+  });
+  return talksJson;
 };
 
 export const getCityJson = (country: string) => {
@@ -123,4 +86,21 @@ export const getTalkJson = (date: string) => {
     }
   });
   return talkJson[0];
+};
+
+export const getPagedTalksJson = (talks: TalkJson[]) => {
+  const pagedTalkJson: TalkJson[][] = [];
+  let talksJson: TalkJson[] = [];
+  const pagedContent = 6;
+  talks.map((talk: TalkJson) => {
+    talksJson.push(talk);
+    if (talksJson.length >= pagedContent) {
+      pagedTalkJson.push(talksJson);
+      talksJson = [];
+    }
+  });
+  if (talksJson.length > 0) {
+    pagedTalkJson.push(talksJson);
+  }
+  return pagedTalkJson;
 };
