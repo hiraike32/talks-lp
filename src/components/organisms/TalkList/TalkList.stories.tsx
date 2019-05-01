@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router";
 import talkJson from "../../../resource/talks.json";
 import TalkList from "./TalkList";
 
-const story = storiesOf("organisms", module).addDecorator((story) => (
+const story = storiesOf("organisms", module).addDecorator(story => (
   <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
 ));
 

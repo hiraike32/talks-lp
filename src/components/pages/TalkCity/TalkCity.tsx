@@ -10,10 +10,10 @@ const cx = classNames.bind(styles);
 
 const TalkCity: React.FC<RouteComponentProps<{ country: string }>> = ({
   match,
-  history,
+  history
 }) => {
   const [countryTalksJson, setCountryTalksJson] = React.useState(
-    getCountryTalksJson(match.params.country),
+    getCountryTalksJson(match.params.country)
   );
   const [cityTalksJson, setCityTalksJson] = React.useState();
 

@@ -8,7 +8,7 @@ import topImage from "../../../image/top.jpg";
 import talkJson from "../../../resource/talks.json";
 import {
   getPagedTalksJson,
-  getWorldTalksJson,
+  getWorldTalksJson
 } from "../../../utils/getTalksJson";
 import ColorBox from "../../atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";

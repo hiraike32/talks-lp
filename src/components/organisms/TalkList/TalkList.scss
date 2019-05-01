@@ -8,7 +8,7 @@
 
 .head {
   display: flex;
-  margin-bottom: 1rem;
+  margin: 2rem 0 1rem;
 }
 
 .head div {
@@ -29,9 +29,16 @@
   opacity: 0.5;
 }
 
+.noTalk {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
 .pager {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   display: flex;
+  justify-content: center;
 }
 
 .pager button {
