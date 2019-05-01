@@ -6,7 +6,7 @@ import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
 import { CountryJson } from "../../../types/talks";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
-import { getCountryJson } from "../../../utils/getTalksJson";
+import { getWorldTalksJson } from "../../../utils/getTalksJson";
 import styles from "./Map.scss";
 
 const cx = classNames.bind(styles);
@@ -26,10 +26,7 @@ const Map: React.FC<Props> = ({ countryJson }) => {
   };
 
   return (
-    <svg
-      height={(getScreenSize() / 100) * 47 + 12}
-      className={cx("svg")}
-    >
+    <svg height={(getScreenSize() / 100) * 47 + 12} className={cx("svg")}>
       <g className={cx("countries")}>
         {worldData.map((d: any, i: number) => (
           <path

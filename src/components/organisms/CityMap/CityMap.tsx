@@ -5,21 +5,21 @@ import { feature } from "topojson-client";
 import countries from "../../../resource/110m.json";
 import { CityJson, TalkJson } from "../../../types/talks";
 import { getScreenSize } from "../../../utils/getDisplayWidth";
-import { getCityJson, getPagedCityTalkJson } from "../../../utils/getTalksJson";
+import { getCityJson, getCityTalksJson } from "../../../utils/getTalksJson";
 import styles from "./CityMap.scss";
 
 const cx = classNames.bind(styles);
 
 interface Props {
-  pagedTalkJson: TalkJson[][];
-  setPagedCityTalkJson: React.Dispatch<React.SetStateAction<TalkJson[][]>>;
+  countryTalksJson: TalkJson[];
+  setCityTalksJson: React.Dispatch<React.SetStateAction<TalkJson[]>>;
   match: any;
 }
 
 const CityMap: React.FC<Props> = ({
   match,
-  pagedTalkJson,
-  setPagedCityTalkJson,
+  countryTalksJson,
+  setCityTalksJson,
 }) => {
   // @ts-ignore
   const worldData = feature(countries, countries.objects.countries).features;
@@ -39,7 +39,7 @@ const CityMap: React.FC<Props> = ({
   };
 
   const handleClickCircle = (city: string) => {
-    setPagedCityTalkJson(getPagedCityTalkJson(city, pagedTalkJson));
+    setCityTalksJson(getCityTalksJson(city, countryTalksJson));
     setSelectedCity(city);
   };
 

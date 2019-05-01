@@ -6,7 +6,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import talkJson from "../../../resource/talks.json";
 import { TalkJson } from "../../../types/talks";
-import { getPagedTalkJson } from "../../../utils/getTalksJson";
+import { getPagedTalksJson } from "../../../utils/getTalksJson";
 import Text from "../../atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import SearchBox from "../../molecules/SearchBox/SearchBox";
@@ -20,12 +20,12 @@ const Talk: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [talks, setTalks] = React.useState(getPagedTalkJson(talkJson));
+  const [talks, setTalks] = React.useState(getPagedTalksJson(talkJson));
   const [searchedTalks, setSearchedTalks] = React.useState(talkJson);
   const selectedPage: number = Number(match.params.page);
 
   React.useEffect(() => {
-    setTalks(getPagedTalkJson(searchedTalks));
+    setTalks(getPagedTalksJson(searchedTalks));
     history.replace("/talks/1");
   }, [searchedTalks]);
 
