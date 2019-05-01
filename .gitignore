@@ -3,3 +3,4 @@ dist/*
 !dist/404.html
 node_modules/
 src/config/
+yarn-error.log

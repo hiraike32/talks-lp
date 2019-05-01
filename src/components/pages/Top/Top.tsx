@@ -1,3 +1,6 @@
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
 import { RouteComponentProps } from "react-router";
@@ -13,6 +16,8 @@ import styles from "./Top.scss";
 
 const cx = classNames.bind(styles);
 
+library.add(faAngleDoubleDown);
+
 const Top: React.FC<RouteComponentProps> = ({ history }) => {
   const [countryJson, setCountryJson] = React.useState(getCountryJson());
 
@@ -24,6 +29,9 @@ const Top: React.FC<RouteComponentProps> = ({ history }) => {
         </div>
         <div className={cx("topMessage")}>
           <TopMessage />
+        </div>
+        <div className={cx("scrollIcon")}>
+          <FontAwesomeIcon icon={faAngleDoubleDown} size="4x" />
         </div>
         <div className={cx("bar")}>
           <ColorBox width="30vw" color="lime" bold={true} />
