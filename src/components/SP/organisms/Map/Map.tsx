@@ -21,7 +21,7 @@ const Map: React.FC<Props> = ({ countryJson }) => {
 
   const projection = (): GeoProjection => {
     return geoMercator()
-      .scale(getScreenSize() / 7 + 2)
+      .scale(getScreenSize() / 7 + 11)
       .translate([getScreenSize() / 2, (getScreenSize() / 7) * 2 + 17]);
   };
 

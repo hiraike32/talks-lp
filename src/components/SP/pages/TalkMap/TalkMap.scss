@@ -1,7 +1,7 @@
 @import "../../../../styles/all.scss";
 
 .container {
-  padding-top: $pageHightPadding;
+  padding-top: $spPageHightPadding;
 }
 
 .title {
@@ -9,6 +9,6 @@
 }
 
 .map {
-  margin-top: 5rem;
+  margin-top: 3rem;
   border-top: 0.25rem solid $fontLime;
 }
