@@ -1,7 +1,7 @@
 @import "../../../../styles/all.scss";
 
 .container {
-  padding: $pageHightPadding $pageWidthPadding;
+  padding: $spPageHightPadding $spPageWidthPadding;
 }
 
 .head {
@@ -21,26 +21,13 @@
 }
 
 .searchBox {
-  padding: 2rem 2.5rem 0;
-}
-
-.postContent {
-  display: flex;
+  padding: 2rem 1rem;
 }
 
 .noPost {
   width: 100%;
   padding: 2rem;
   text-align: center;
-}
-
-.posts {
-  width: 50%;
-}
-
-.post {
-  padding: 2rem;
-  align-self: stretch;
 }
 
 .pager {
