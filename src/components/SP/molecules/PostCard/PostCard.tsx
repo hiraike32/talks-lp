@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import { PostJson } from "../../../../types/posts";
-import Tag from "../../atoms/Tag/Tag";
-import Text from "../../atoms/Text/Text";
+import Tag from "../../../Common/atoms/Tag/Tag";
+import Text from "../../../Common/atoms/Text/Text";
 import ScrollToTop from "../../organisms/ScrollTop/ScrollTop";
 import styles from "./PostCard.scss";
 

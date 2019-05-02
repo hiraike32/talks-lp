@@ -1,6 +1,6 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import styles from "./LanguageSelection.scss";
 
 const cx = classNames.bind(styles);

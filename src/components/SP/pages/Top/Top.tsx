@@ -10,7 +10,7 @@ import {
   getPagedTalksJson,
   getWorldTalksJson,
 } from "../../../../utils/getTalksJson";
-import ColorBox from "../../atoms/ColorBox/ColorBox";
+import ColorBox from "../../../Common/atoms/ColorBox/ColorBox";
 import TopMessage from "../../molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
 import WorldTalkList from "../../organisms/WorldTalkList/WorldTalkList";

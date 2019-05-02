@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import { ProjectJson } from "../../../../types/projects";
-import Tag from "../../atoms/Tag/Tag";
-import Text from "../../atoms/Text/Text";
+import Tag from "../../../Common/atoms/Tag/Tag";
+import Text from "../../../Common/atoms/Text/Text";
 import styles from "./ProjectCard.scss";
 
 const cx = classNames.bind(styles);

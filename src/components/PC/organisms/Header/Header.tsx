@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
 import { Link } from "react-router-dom";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import styles from "./Header.scss";
 
 const cx = classNames.bind(styles);
