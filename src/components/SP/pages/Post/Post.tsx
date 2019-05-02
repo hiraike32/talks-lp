@@ -35,7 +35,7 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   return (
     <div className={cx("container")}>
       <div className={cx("head")}>
-        <span onClick={history.goBack}>
+        <span onClick={history.goBack} className={cx("arrowClick")}>
           <FontAwesomeIcon
             icon={faArrowLeft}
             size="2x"
