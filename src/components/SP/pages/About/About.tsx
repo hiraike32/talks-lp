@@ -32,102 +32,101 @@ const About: React.FC<RouteComponentProps> = ({ history }) => {
 
   return (
     <div className={cx("container")}>
-      <div className={cx("leftColumn")}>
-        <div className={cx("head")}>
-          <span onClick={history.goBack}>
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              size="2x"
-              className={cx("arrow", "icon")}
-            />
-          </span>
-          <Text color="lime" type="h2" bold={true} italic={true}>
-            About
+      <div className={cx("head")}>
+        <span onClick={history.goBack}>
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            size="2x"
+            className={cx("arrow", "icon")}
+          />
+        </span>
+        <Text color="lime" type="h2" bold={true} italic={true}>
+          About
+        </Text>
+      </div>
+      <div className={cx("photo")}>
+        <img src={photo} />
+      </div>
+      <div className={cx("linkIcons")}>
+        {linkIcons.map((linkIcons) => {
+          return (
+            <span key={linkIcons.type} className={cx("linkIcon")}>
+              <AboutLinkIcon type={linkIcons.type} href={linkIcons.href} />
+            </span>
+          );
+        })}
+      </div>
+      <div className={cx("tags")}>
+        {tags.map((tag) => (
+          <Tag key={tag}>{tag}</Tag>
+        ))}
+      </div>
+      <div className={cx("titles")}>
+        <div className={cx("title")}>
+          <Text type="h3" color="lime">
+            Software Consultant
           </Text>
         </div>
-        <div className={cx("photo")}>
-          <img src={photo} />
+        <div className={cx("title")}>
+          <Text type="h3" color="lime">
+            Microsoft MVP
+          </Text>
         </div>
-        <div className={cx("linkIcons")}>
-          {linkIcons.map((linkIcons) => {
-            return (
-              <span key={linkIcons.type} className={cx("linkIcon")}>
-                <AboutLinkIcon type={linkIcons.type} href={linkIcons.href} />
-              </span>
-            );
-          })}
-        </div>
-        <div className={cx("tags")}>
-          {tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </div>
-        <div className={cx("titles")}>
-          <div className={cx("title")}>
-            <Text type="h3" color="lime">
-              Software Consultant
-            </Text>
-          </div>
-          <div className={cx("title")}>
-            <Text type="h3" color="lime">
-              Microsoft MVP
-            </Text>
-          </div>
-          <div className={cx("title")}>
-            <Text type="h3" color="lime">
-              Google Dev Expert
-            </Text>
-          </div>
-        </div>
-        <div className={cx("profile")}>
-          <Text>
-            Erick Wendel is a Speaker, Software Consultant and community
-            Co-organizer in Brazil. <br />
-            Named by Microsoft as{" "}
-            <Text color="lime">
-              <a
-                href="https://mvp.microsoft.com/pt-br/PublicProfile/5002509?fullName=Erick%20%20%20Wendel"
-                target="_blank"
-                className={cx("linkTitle")}
-              >
-                Most Valuable Professional
-              </a>
-            </Text>
-            , and by Google as{" "}
-            <Text color="lime">
-              <a
-                href="https://developers.google.com/programs/experts/directory/"
-                target="_blank"
-                className={cx("linkTitle")}
-              >
-                Google Developer Expert
-              </a>
-            </Text>
-            , a specialist in Node.js and Javascript Applications.
-            <br /> He is a Software Independent Architect who helps companies to
-            make better and cheaper applications using Serverless architectures,
-            Container based applications, and Hybrid Cloud solutions. <br />
-            He has experience speaking and teaching at the biggest conferences
-            in Brazil and Americas, working as voluntary Leader of NodeBR,
-            Javascript São Paulo and Nerdzão Communities.
+        <div className={cx("title")}>
+          <Text type="h3" color="lime">
+            Google Dev Expert
           </Text>
         </div>
       </div>
-      <div className={cx("rightColumn")}>
-        <div className={cx("project")}>
-          <Text color="lime" type="h2" bold={true} italic={true}>
-            Projects
+      <div className={cx("profile")}>
+        <Text>
+          Erick Wendel is a Speaker, Software Consultant and community
+          Co-organizer in Brazil. <br />
+          <br />
+          Named by Microsoft as{" "}
+          <Text color="lime">
+            <a
+              href="https://mvp.microsoft.com/pt-br/PublicProfile/5002509?fullName=Erick%20%20%20Wendel"
+              target="_blank"
+              className={cx("linkTitle")}
+            >
+              Most Valuable Professional
+            </a>
           </Text>
-        </div>
-        <div className={cx("projects")}>
-          {projects.map((project) => {
-            return (
-              <span key={project.date}>
-                <ProjectCard {...project} />
-              </span>
-            );
-          })}
-        </div>
+          , and by Google as{" "}
+          <Text color="lime">
+            <a
+              href="https://developers.google.com/programs/experts/directory/"
+              target="_blank"
+              className={cx("linkTitle")}
+            >
+              Google Developer Expert
+            </a>
+          </Text>
+          , a specialist in Node.js and Javascript Applications.
+          <br /> <br />
+          He is a Software Independent Architect who helps companies to make
+          better and cheaper applications using Serverless architectures,
+          Container based applications, and Hybrid Cloud solutions. <br />
+          <br />
+          He has experience speaking and teaching at the biggest conferences in
+          Brazil and Americas, working as voluntary Leader of NodeBR, Javascript
+          São Paulo and Nerdzão Communities.
+        </Text>
+      </div>
+      <div className={cx("projectTitle")}>
+        <Text color="lime" type="h2" bold={true} italic={true}>
+          Projects
+        </Text>
+      </div>
+      <div className={cx("projects")}>
+        {projects.map((project) => {
+          return (
+            <span key={project.date}>
+              <ProjectCard {...project} />
+            </span>
+          );
+        })}
       </div>
     </div>
   );
