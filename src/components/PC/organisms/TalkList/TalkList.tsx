@@ -8,9 +8,9 @@ import { getPagedTalksJson } from "../../../../utils/getTalksJson";
 import Button from "../../../Common/atoms/Button/Button";
 import ColorCircle from "../../../Common/atoms/ColorCircle/ColorCircle";
 import Text from "../../../Common/atoms/Text/Text";
-import Pager from "../../molecules/Pager/Pager";
-import SearchBox from "../../molecules/SearchBox/SearchBox";
-import TalkCard from "../../molecules/TalkCard/TalkCard";
+import Pager from "../../../Common/molecules/Pager/Pager";
+import SearchBox from "../../../Common/molecules/SearchBox/SearchBox";
+import TalkCard from "../../../Common/molecules/TalkCard/TalkCard";
 import styles from "./TalkList.scss";
 
 const cx = classNames.bind(styles);

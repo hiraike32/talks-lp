@@ -1,0 +1,37 @@
+@import "../../../../styles/all.scss";
+
+.container div {
+  display: flex;
+
+  @include pc {
+    justify-content: flex-end;
+  }
+}
+
+.language span {
+  margin-left: 0.5rem;
+}
+
+.talks span:last-child {
+  margin-left: 0.5rem;
+}
+
+.world {
+  margin: 1rem 0;
+}
+
+.border {
+  margin-top: 1rem;
+
+  @include sp {
+    display: none !important;
+  }
+}
+
+.language {
+  margin-top: 1rem;
+
+  @include sp {
+    display: none !important;
+  }
+}

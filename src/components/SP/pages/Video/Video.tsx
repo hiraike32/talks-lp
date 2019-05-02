@@ -7,8 +7,8 @@ import { RouteComponentProps } from "react-router";
 import { VideoJson } from "../../../../types/videos";
 import { getPagedVideoJson } from "../../../../utils/getVideosJson";
 import Text from "../../../Common/atoms/Text/Text";
-import Pager from "../../molecules/Pager/Pager";
-import VideoCard from "../../molecules/VideoCard/VideoCard";
+import Pager from "../../../Common/molecules/Pager/Pager";
+import VideoCard from "../../../Common/molecules/VideoCard/VideoCard";
 import ScrollToTop from "../../organisms/ScrollTop/ScrollTop";
 import styles from "./Video.scss";
 

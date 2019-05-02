@@ -11,7 +11,7 @@ import {
   getWorldTalksJson,
 } from "../../../../utils/getTalksJson";
 import ColorBox from "../../../Common/atoms/ColorBox/ColorBox";
-import TopMessage from "../../molecules/TopMessage/TopMessage";
+import TopMessage from "../../../Common/molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
 import WorldTalkList from "../../organisms/WorldTalkList/WorldTalkList";
 import TalkMap from "../TalkMap/TalkMap";

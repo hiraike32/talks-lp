@@ -2,7 +2,7 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { CountryJson } from "../../../../types/talks";
 import Text from "../../../Common/atoms/Text/Text";
-import TalkTotalCard from "../../molecules/TalkTotalCard/TalkTotalCard";
+import TalkTotalCard from "../../../Common/molecules/TalkTotalCard/TalkTotalCard";
 import styles from "./WorldTalkList.scss";
 
 const cx = classNames.bind(styles);
