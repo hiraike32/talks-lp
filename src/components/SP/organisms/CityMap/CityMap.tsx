@@ -27,14 +27,14 @@ const CityMap: React.FC<Props> = ({
     getCityJson(match.params.country),
   );
   const mapCenter: [number, number] = [
-    cityData[0].coordinates[0],
+    cityData[0].coordinates[0] + 60,
     cityData[0].coordinates[1],
   ];
   const [selectedCity, setSelectedCity] = React.useState();
 
   const projection = (): GeoProjection => {
     return geoMercator()
-      .scale((getScreenSize() * 2) / 5 + 200)
+      .scale((getScreenSize() * 2) / 5 + 100)
       .center(mapCenter);
   };
 
