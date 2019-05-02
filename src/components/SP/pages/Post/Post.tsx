@@ -9,9 +9,9 @@ import postJson from "../../../../resource/posts.json";
 import { PostJson } from "../../../../types/posts";
 import { getPagedPostJson } from "../../../../utils/getPostsJson";
 import Text from "../../../Common/atoms/Text/Text";
-import Pager from "../../molecules/Pager/Pager";
-import PostCard from "../../molecules/PostCard/PostCard";
-import SearchBox from "../../molecules/SearchBox/SearchBox";
+import Pager from "../../../Common/molecules/Pager/Pager";
+import PostCard from "../../../Common/molecules/PostCard/PostCard";
+import SearchBox from "../../../Common/molecules/SearchBox/SearchBox";
 import styles from "./Post.scss";
 
 const cx = classNames.bind(styles);

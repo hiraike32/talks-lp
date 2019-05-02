@@ -5,7 +5,7 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 import Text from "../../../Common/atoms/Text/Text";
-import LanguageSelection from "../../molecules/LanguageSelection/LanguageSelection";
+import LanguageSelection from "../../../Common/molecules/LanguageSelection/LanguageSelection";
 import styles from "./MenuModal.scss";
 
 const cx = classNames.bind(styles);

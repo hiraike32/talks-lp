@@ -10,8 +10,8 @@ import Tag from "../../../Common/atoms/Tag/Tag";
 import Text from "../../../Common/atoms/Text/Text";
 import AboutLinkIcon, {
   Props as LinkIconProps,
-} from "../../molecules/AboutLinkIcon/AboutLinkIcon";
-import ProjectCard from "../../molecules/ProjectCard/ProjectCard";
+} from "../../../Common/molecules/AboutLinkIcon/AboutLinkIcon";
+import ProjectCard from "../../../Common/molecules/ProjectCard/ProjectCard";
 import styles from "./About.scss";
 
 const cx = classNames.bind(styles);

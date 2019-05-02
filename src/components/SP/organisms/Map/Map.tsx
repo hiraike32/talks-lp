@@ -6,7 +6,6 @@ import { feature } from "topojson-client";
 import countries from "../../../../resource/110m.json";
 import { CountryJson } from "../../../../types/talks";
 import { getScreenSize } from "../../../../utils/getDisplayWidth";
-import { getWorldTalksJson } from "../../../../utils/getTalksJson";
 import styles from "./Map.scss";
 
 const cx = classNames.bind(styles);

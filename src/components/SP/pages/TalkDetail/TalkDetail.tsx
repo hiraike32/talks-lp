@@ -7,7 +7,7 @@ import { RouteComponentProps } from "react-router";
 import { getTalkJson } from "../../../../utils/getTalksJson";
 import Tag from "../../../Common/atoms/Tag/Tag";
 import Text from "../../../Common/atoms/Text/Text";
-import LinkCard from "../../molecules/LinkCard/LinkCard";
+import LinkCard from "../../../Common/molecules/LinkCard/LinkCard";
 import styles from "./TalkDetail.scss";
 
 const cx = classNames.bind(styles);
