@@ -6,8 +6,8 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router-dom";
 import photo from "../../../../image/erickwendel.png";
 import { getPagedProjectJson } from "../../../../utils/getProjectsJson";
-import Tag from "../../atoms/Tag/Tag";
-import Text from "../../atoms/Text/Text";
+import Tag from "../../../Common/atoms/Tag/Tag";
+import Text from "../../../Common/atoms/Text/Text";
 import AboutLinkIcon, {
   Props as LinkIconProps,
 } from "../../molecules/AboutLinkIcon/AboutLinkIcon";

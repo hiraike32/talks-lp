@@ -7,7 +7,7 @@ import { RouteComponentProps } from "react-router";
 import talkJson from "../../../../resource/talks.json";
 import { TalkJson } from "../../../../types/talks";
 import { getPagedTalksJson } from "../../../../utils/getTalksJson";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import SearchBox from "../../molecules/SearchBox/SearchBox";
 import TalkCard from "../../molecules/TalkCard/TalkCard";

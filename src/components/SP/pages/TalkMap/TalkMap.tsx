@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import { getWorldTalksJson } from "../../../../utils/getTalksJson";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import Map from "../../organisms/Map/Map";
 import styles from "./TalkMap.scss";
 

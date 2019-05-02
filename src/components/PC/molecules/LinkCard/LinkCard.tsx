@@ -10,7 +10,7 @@ import * as React from "react";
 import photo from "../../../../image/photoLink.jpg";
 import slide from "../../../../image/slideLink.png";
 import video from "../../../../image/videoLink.jpg";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import styles from "./LinkCard.scss";
 
 const cx = classNames.bind(styles);

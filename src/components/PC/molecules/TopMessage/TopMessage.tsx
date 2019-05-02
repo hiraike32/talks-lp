@@ -1,7 +1,7 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import ColorBox from "../../atoms/ColorBox/ColorBox";
-import Text from "../../atoms/Text/Text";
+import ColorBox from "../../../Common/atoms/ColorBox/ColorBox";
+import Text from "../../../Common/atoms/Text/Text";
 import LanguageSelection from "../LanguageSelection/LanguageSelection";
 import styles from "./TopMessage.scss";
 

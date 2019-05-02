@@ -6,7 +6,7 @@ import * as React from "react";
 import { RouteComponentProps } from "react-router";
 import { VideoJson } from "../../../../types/videos";
 import { getPagedVideoJson } from "../../../../utils/getVideosJson";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import VideoCard from "../../molecules/VideoCard/VideoCard";
 import ScrollToTop from "../../organisms/ScrollTop/ScrollTop";

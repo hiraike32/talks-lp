@@ -8,7 +8,7 @@ import { withRouter } from "react-router";
 import postJson from "../../../../resource/posts.json";
 import { PostJson } from "../../../../types/posts";
 import { getPagedPostJson } from "../../../../utils/getPostsJson";
-import Text from "../../atoms/Text/Text";
+import Text from "../../../Common/atoms/Text/Text";
 import Pager from "../../molecules/Pager/Pager";
 import PostCard from "../../molecules/PostCard/PostCard";
 import SearchBox from "../../molecules/SearchBox/SearchBox";

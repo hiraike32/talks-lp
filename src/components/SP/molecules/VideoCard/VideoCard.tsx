@@ -1,8 +1,8 @@
 import classNames from "classnames/bind";
 import * as React from "react";
 import { VideoJson } from "../../../../types/videos";
-import Tag from "../../atoms/Tag/Tag";
-import Text from "../../atoms/Text/Text";
+import Tag from "../../../Common/atoms/Tag/Tag";
+import Text from "../../../Common/atoms/Text/Text";
 import VideoThumbnail from "../VideoThumbnail/VideoThumbnail";
 import styles from "./VideoCard.scss";
 
