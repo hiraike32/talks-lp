@@ -4,8 +4,10 @@ import React from "react";
 import { MemoryRouter } from "react-router";
 import Header from "./Header";
 
-const story = storiesOf("organisms", module).addDecorator((story) => (
+const story = storiesOf("sp/organisms", module).addDecorator((story) => (
   <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
 ));
 
-story.add("Header", () => <Header setMenuModal={action("setMenuModal")} />);
+story
+  .addParameters({ viewport: { defaultViewport: "iphone6" } })
+  .add("Header", () => <Header setMenuModal={action("setMenuModal")} />);

@@ -2,8 +2,9 @@
 
 .container {
   position: fixed;
-  width: 100%;
-  padding: $headerHeightPadding $pageWidthPadding 0;
+  transform: translate3d(0, 0, 0);
+  width: 100vw;
+  padding: $spHeaderHeightPadding $spPageWidthPadding 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
