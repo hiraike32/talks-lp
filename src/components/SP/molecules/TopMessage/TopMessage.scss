@@ -2,25 +2,12 @@
 
 .container div {
   display: flex;
-  justify-content: flex-end;
 }
 
-.talks span {
+.talks span:last-child {
   margin-left: 0.5rem;
 }
 
 .world {
-  margin-top: 0.5rem;
-}
-
-.border {
-  margin-top: 1rem;
-}
-
-.language {
-  margin-top: 1rem;
-}
-
-.language span {
-  margin-left: 0.5rem;
+  margin: 1rem 0;
 }

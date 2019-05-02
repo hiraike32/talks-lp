@@ -1,8 +1,6 @@
 import classNames from "classnames/bind";
 import * as React from "react";
-import ColorBox from "../../../Common/atoms/ColorBox/ColorBox";
 import Text from "../../../Common/atoms/Text/Text";
-import LanguageSelection from "../LanguageSelection/LanguageSelection";
 import styles from "./TopMessage.scss";
 
 const cx = classNames.bind(styles);
@@ -26,12 +24,6 @@ const TopMessage: React.FC = () => (
       <Text type="h2" italic={true}>
         #DaZLParaOMundo
       </Text>
-    </div>
-    <div className={cx("border")}>
-      <ColorBox width="5rem" color="lime" bold={true} />
-    </div>
-    <div className={cx("language")}>
-      <LanguageSelection language="en" />
     </div>
   </div>
 );
