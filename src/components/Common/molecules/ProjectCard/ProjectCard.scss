@@ -2,8 +2,9 @@
 
 .container {
   border-bottom: 0.1rem solid $fontLime;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 0;
   transition: background-color 0.25s;
+  margin-top: 2rem;
 }
 
 .container:hover {
