@@ -5,7 +5,7 @@ import MenuModal from "../organisms/MenuModal/MenuModal";
 import About from "./About/About";
 import Post from "./Post/Post";
 import Talk from "./Talk/Talk";
-import TalkCity from "./TalkCity/TalkCity";
+import TalkCityMap from "./TalkCityMap/TalkCityMap";
 import TalkDetail from "./TalkDetail/TalkDetail";
 import TalkMap from "./TalkMap/TalkMap";
 import Top from "./Top/Top";
@@ -24,7 +24,7 @@ const Root: React.FC = () => {
         <Route
           exact={true}
           path="/talks/country/:country"
-          component={TalkCity}
+          component={TalkCityMap}
         />
         <Route exact={true} path="/talk/detail/:date" component={TalkDetail} />
         <Route exact={true} path="/posts/:page" component={Post} />
