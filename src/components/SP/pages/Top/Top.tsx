@@ -36,13 +36,11 @@ const Top: React.FC = () => {
       <div className={cx("talkmap")}>
         <TalkMap />
       </div>
-      <div className={cx("talkDetail")}>
-        <div className={cx("worldList")}>
-          <WorldTalkList countryJson={countryJson} />
-        </div>
-        <div className={cx("talkList")}>
-          <TalkList title="Recent Talks" talksJson={talkJson} />
-        </div>
+      <div className={cx("worldList")}>
+        <WorldTalkList countryJson={countryJson} />
+      </div>
+      <div className={cx("talkList")}>
+        <TalkList title="Recent Talks" talksJson={talkJson} />
       </div>
     </div>
   );
