@@ -21,12 +21,12 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [posts, setPosts] = React.useState(getPagedPostJson(postJson));
+  const [posts, setPosts] = React.useState(getPagedPostJson(postJson, 3));
   const [searchedPosts, setSearchedPosts] = React.useState(postJson);
   const selectedPage: number = Number(match.params.page);
 
   React.useEffect(() => {
-    setPosts(getPagedPostJson(searchedPosts));
+    setPosts(getPagedPostJson(searchedPosts, 3));
     history.replace("/posts/1");
   }, [searchedPosts]);
 

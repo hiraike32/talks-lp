@@ -21,12 +21,14 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
   match,
   history,
 }) => {
-  const [posts, setPosts] = React.useState(getPagedPostJson(postJson));
+  const [posts, setPosts] = React.useState<PostJson[][]>(
+    getPagedPostJson(postJson, 6),
+  );
   const [searchedPosts, setSearchedPosts] = React.useState(postJson);
   const selectedPage: number = Number(match.params.page);
 
   React.useEffect(() => {
-    setPosts(getPagedPostJson(searchedPosts));
+    setPosts(getPagedPostJson(searchedPosts, 6));
     history.replace("/posts/1");
   }, [searchedPosts]);
 
@@ -53,30 +55,17 @@ const Post: React.FC<RouteComponentProps<{ page: string }>> = ({
             <Text type="h1">Posts not found</Text>
           </div>
         ) : (
-          <>
-            <div className={cx("posts")}>
-              {posts[selectedPage * 2 - 2].map((post: PostJson) => (
-                <div className={cx("post")}>
-                  <PostCard {...post} />
-                </div>
-              ))}
-            </div>
-            <div className={cx("posts")}>
-              {posts[selectedPage * 2 - 1] &&
-                posts[selectedPage * 2 - 1].map((post: PostJson) => (
-                  <div className={cx("post")}>
-                    <PostCard {...post} />
-                  </div>
-                ))}
-            </div>
-          </>
+          <div className={cx("posts")}>
+            {posts[selectedPage - 1].map((post: PostJson) => (
+              <div className={cx("post")}>
+                <PostCard {...post} />
+              </div>
+            ))}
+          </div>
         )}
       </div>
       <div className={cx("pager")}>
-        <Pager
-          allPage={Math.ceil(posts.length / 2)}
-          selectedPage={selectedPage}
-        />
+        <Pager allPage={Math.ceil(posts.length)} selectedPage={selectedPage} />
       </div>
     </div>
   );
