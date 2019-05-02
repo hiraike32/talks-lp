@@ -1,7 +1,7 @@
 @import "../../../../styles/all.scss";
 
 .container {
-  padding: $pageHightPadding $pageWidthPadding;
+  padding: $spPageHightPadding $spPageWidthPadding;
 }
 
 .head {
@@ -11,6 +11,11 @@
 
 .leftColumn {
   width: 50%;
+}
+
+.arrowClick {
+  display: flex;
+  align-items: center;
 }
 
 .arrow {

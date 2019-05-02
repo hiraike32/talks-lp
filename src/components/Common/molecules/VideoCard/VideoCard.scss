@@ -2,17 +2,26 @@
 
 .container {
   padding: 1.5rem 1rem;
-  display: flex;
-}
 
-.thumbnail {
-  width: 30%;
-  padding: 0 1rem;
-}
+  @include pc {
+    display: flex;
 
-.content {
-  width: 70%;
-  padding: 0 1rem 0 4rem;
+    .thumbnail {
+      width: 30%;
+      padding: 0 1rem;
+    }
+
+    .content {
+      width: 70%;
+      padding: 0 1rem 0 4rem;
+    }
+  }
+
+  @include sp {
+    .content {
+      padding: 1.5rem 0 3rem;
+    }
+  }
 }
 
 .tag span {
@@ -21,6 +30,10 @@
 
 .abstract {
   margin-top: 2rem;
+
+  @include sp {
+    margin-top: 1rem;
+  }
 }
 
 .tag {
