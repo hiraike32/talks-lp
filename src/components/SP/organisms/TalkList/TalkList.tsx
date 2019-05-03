@@ -37,6 +37,11 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
     setSelectedPage(1);
   }, [searchedTalks]);
 
+  React.useEffect(() => {
+    setTalks(getPagedTalksJson(talksJson));
+    setSelectedPage(1);
+  }, [talksJson]);
+
   return (
     <div className={cx("container")}>
       <div className={cx("title")}>
