@@ -8,6 +8,7 @@ import { getTalkJson } from "../../../../utils/getTalksJson";
 import Tag from "../../../Common/atoms/Tag/Tag";
 import Text from "../../../Common/atoms/Text/Text";
 import LinkCard from "../../../Common/molecules/LinkCard/LinkCard";
+import PhotoCarousel from "../../../Common/molecules/PhotoCarousel/PhotoCarousel";
 import styles from "./TalkDetail.scss";
 
 const cx = classNames.bind(styles);
@@ -69,7 +70,9 @@ const TalkDetail: React.FC<RouteComponentProps<{ date: string }>> = ({
         </div>
       </div>
       <div className={cx("rightColumn")}>
-        {talk.photos && <LinkCard type="photo" href={talk.photos} />}
+        <div className={cx("photoCarousel")}>
+          <PhotoCarousel />
+        </div>
         {talk.slides && <LinkCard type="slide" href={talk.slides} />}
         {talk.video && <LinkCard type="video" href={talk.video} />}
       </div>

@@ -1,28 +1,36 @@
 import classNames from "classnames/bind";
+import Carousel from "nuka-carousel";
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import photoCarousel1 from "../../../../image/__fixtures__/photoCarousel1.jpg";
+import photoCarousel2 from "../../../../image/__fixtures__/photoCarousel2.jpg";
+import photoCarousel3 from "../../../../image/__fixtures__/photoCarousel3.jpg";
+import photoCarousel4 from "../../../../image/__fixtures__/photoCarousel4.jpg";
+import photoCarousel5 from "../../../../image/__fixtures__/photoCarousel5.jpg";
+import photoCarousel6 from "../../../../image/__fixtures__/photoCarousel6.jpg";
+import photoCarousel7 from "../../../../image/__fixtures__/photoCarousel7.jpg";
 import styles from "./PhotoCarousel.scss";
 
 const cx = classNames.bind(styles);
 
 export interface PhotoCarouselProps {
   image: string;
-  name?: string;
 }
 
-const PhotoCarousel: React.FC<{ photos: PhotoCarouselProps[] }> = ({
-  photos,
-}) => {
+const photosFixture: PhotoCarouselProps[] = [
+  { image: photoCarousel1 },
+  { image: photoCarousel2 },
+  { image: photoCarousel3 },
+  { image: photoCarousel4 },
+  { image: photoCarousel5 },
+  { image: photoCarousel6 },
+  { image: photoCarousel7 },
+];
+
+const PhotoCarousel: React.FC = () => {
   return (
-    <Carousel>
-      {photos.map((photo) => {
-        return (
-          <div key={photo.image} className={cx("photo")}>
-            <img src={photo.image} />
-            {photo.name && <p>{photo.name}</p>}
-          </div>
-        );
+    <Carousel className={cx("carousel")}>
+      {photosFixture.map((photo) => {
+        return <img src={photo.image} key={photo.image} />;
       })}
     </Carousel>
   );

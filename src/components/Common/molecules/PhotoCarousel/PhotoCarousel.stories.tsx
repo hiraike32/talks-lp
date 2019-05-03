@@ -15,13 +15,17 @@ const story = storiesOf("molecules", module).addDecorator((story) => (
 ));
 
 const photos: PhotoCarouselProps[] = [
-  { image: photoCarousel1, name: "photoCarousel1" },
-  { image: photoCarousel2, name: "photoCarousel2" },
-  { image: photoCarousel3, name: "photoCarousel3" },
-  { image: photoCarousel4, name: "photoCarousel4" },
-  { image: photoCarousel5, name: "photoCarousel5" },
-  { image: photoCarousel6, name: "photoCarousel6" },
-  { image: photoCarousel7, name: "photoCarousel7" },
+  { image: photoCarousel1 },
+  { image: photoCarousel2 },
+  { image: photoCarousel3 },
+  { image: photoCarousel4 },
+  { image: photoCarousel5 },
+  { image: photoCarousel6 },
+  { image: photoCarousel7 },
 ];
 
-story.add("PhotoCarousel", () => <PhotoCarousel photos={photos} />);
+story.add("PhotoCarousel", () => (
+  <div style={{ width: "50vw" }}>
+    <PhotoCarousel />
+  </div>
+));
