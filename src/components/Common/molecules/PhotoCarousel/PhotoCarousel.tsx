@@ -1,12 +1,12 @@
 import Carousel from "nuka-carousel";
 import React from "react";
-import photoCarousel1 from "../../../../image/__fixtures__/photoCarousel1.jpg";
-import photoCarousel2 from "../../../../image/__fixtures__/photoCarousel2.jpg";
-import photoCarousel3 from "../../../../image/__fixtures__/photoCarousel3.jpg";
-import photoCarousel4 from "../../../../image/__fixtures__/photoCarousel4.jpg";
-import photoCarousel5 from "../../../../image/__fixtures__/photoCarousel5.jpg";
-import photoCarousel6 from "../../../../image/__fixtures__/photoCarousel6.jpg";
-import photoCarousel7 from "../../../../image/__fixtures__/photoCarousel7.jpg";
+import photoCarousel1 from "../../../../image/photoCarousel1.jpg";
+import photoCarousel2 from "../../../../image/photoCarousel2.jpg";
+import photoCarousel3 from "../../../../image/photoCarousel3.jpg";
+import photoCarousel4 from "../../../../image/photoCarousel4.jpg";
+import photoCarousel5 from "../../../../image/photoCarousel5.jpg";
+import photoCarousel6 from "../../../../image/photoCarousel6.jpg";
+import photoCarousel7 from "../../../../image/photoCarousel7.jpg";
 export interface PhotoCarouselProps {
   image: string;
 }
