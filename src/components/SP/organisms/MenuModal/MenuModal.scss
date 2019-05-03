@@ -28,14 +28,26 @@
   top: 0;
 }
 
+.header {
+  position: relative;
+}
+
+.title {
+  text-align: center;
+}
+
 .closeButton {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
   cursor: pointer;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.languageSelection {
+  margin-top: 2rem;
+  text-align: center;
 }
 
 .menu {
@@ -44,8 +56,7 @@
   flex-direction: column;
   align-content: space-between;
   text-align: center;
-  margin-top: 5rem;
-  padding: 5rem;
+  padding: 3rem 0 10rem;
 }
 
 .menuItem a {

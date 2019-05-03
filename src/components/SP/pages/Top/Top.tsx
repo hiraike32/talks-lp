@@ -8,7 +8,6 @@ import talkJson from "../../../../resource/talks.json";
 import { getWorldTalksJson } from "../../../../utils/getTalksJson";
 import TopMessage from "../../../Common/molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
-import WorldTalkList from "../../organisms/WorldTalkList/WorldTalkList";
 import TalkMap from "../TalkMap/TalkMap";
 import styles from "./Top.scss";
 

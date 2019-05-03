@@ -23,7 +23,6 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
       onClick={() => setMenuModal(false)}
     >
       <div className={cx("header")}>
-        <LanguageSelection language="en" />
         <div className={cx("title")}>
           <NavLink to="/" onClick={() => setMenuModal(false)}>
             <Text light={true} type="h2">
@@ -37,6 +36,9 @@ const MenuModal: React.FC<Props> = ({ isMenuModal, setMenuModal }) => (
         <div className={cx("closeButton")} onClick={() => setMenuModal(false)}>
           <FontAwesomeIcon icon={faTimes} size="3x" color="#fff" />
         </div>
+      </div>
+      <div className={cx("languageSelection")}>
+        <LanguageSelection language="en" />
       </div>
       <div className={cx("menu")}>
         <div className={cx("menuItem")}>
