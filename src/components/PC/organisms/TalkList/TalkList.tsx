@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import { TalkJson } from "../../../../types/talks";
 import { getPagedTalksJson } from "../../../../utils/getTalksJson";
-import Button from "../../../Common/atoms/Button/Button";
 import ColorCircle from "../../../Common/atoms/ColorCircle/ColorCircle";
 import Text from "../../../Common/atoms/Text/Text";
 import Pager from "../../../Common/molecules/Pager/Pager";
@@ -30,13 +29,17 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
   const [searchedTalks, setSearchedTalks] = React.useState<TalkJson[]>(
     talksJson,
   );
-
   const totalCount = talksJson.length;
 
   React.useEffect(() => {
     setTalks(getPagedTalksJson(searchedTalks));
     setSelectedPage(1);
   }, [searchedTalks]);
+
+  React.useEffect(() => {
+    setTalks(getPagedTalksJson(talksJson));
+    setSelectedPage(1);
+  }, [talksJson]);
 
   return (
     <div className={cx("container")}>

@@ -12,9 +12,7 @@ const TalkCity: React.FC<RouteComponentProps<{ country: string }>> = ({
   match,
   history,
 }) => {
-  const [countryTalksJson, setCountryTalksJson] = React.useState(
-    getCountryTalksJson(match.params.country),
-  );
+  const countryTalksJson = getCountryTalksJson(match.params.country);
   const [cityTalksJson, setCityTalksJson] = React.useState();
 
   return (
