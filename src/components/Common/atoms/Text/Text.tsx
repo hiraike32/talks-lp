@@ -23,15 +23,7 @@ const Text: React.FC<Props> = ({
   light,
   children,
 }) => (
-  <span
-    className={cx(
-      color,
-      type,
-      { italic },
-      { bold },
-      { light },
-    )}
-  >
+  <span className={cx("text", color, type, { italic }, { bold }, { light })}>
     {children}
   </span>
 );

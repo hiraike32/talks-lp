@@ -1,5 +1,9 @@
 @import "../../../../styles/all.scss";
 
+.text {
+  word-wrap: break-word;
+}
+
 // type
 .h1 {
   font-size: 4.5rem;

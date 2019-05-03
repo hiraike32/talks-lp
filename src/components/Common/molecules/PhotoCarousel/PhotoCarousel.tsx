@@ -1,4 +1,3 @@
-import classNames from "classnames/bind";
 import Carousel from "nuka-carousel";
 import React from "react";
 import photoCarousel1 from "../../../../image/__fixtures__/photoCarousel1.jpg";
@@ -24,7 +23,7 @@ const photosFixture: PhotoCarouselProps[] = [
 
 const PhotoCarousel: React.FC = () => {
   return (
-    <Carousel className={cx("carousel")}>
+    <Carousel>
       {photosFixture.map((photo) => {
         return <img src={photo.image} key={photo.image} />;
       })}
