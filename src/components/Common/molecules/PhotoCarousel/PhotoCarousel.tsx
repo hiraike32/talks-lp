@@ -8,10 +8,6 @@ import photoCarousel4 from "../../../../image/__fixtures__/photoCarousel4.jpg";
 import photoCarousel5 from "../../../../image/__fixtures__/photoCarousel5.jpg";
 import photoCarousel6 from "../../../../image/__fixtures__/photoCarousel6.jpg";
 import photoCarousel7 from "../../../../image/__fixtures__/photoCarousel7.jpg";
-import styles from "./PhotoCarousel.scss";
-
-const cx = classNames.bind(styles);
-
 export interface PhotoCarouselProps {
   image: string;
 }
