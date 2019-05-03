@@ -8,6 +8,7 @@ import { getTalkJson } from "../../../../utils/getTalksJson";
 import Tag from "../../../Common/atoms/Tag/Tag";
 import Text from "../../../Common/atoms/Text/Text";
 import LinkCard from "../../../Common/molecules/LinkCard/LinkCard";
+import PhotoCarousel from "../../../Common/molecules/PhotoCarousel/PhotoCarousel";
 import styles from "./TalkDetail.scss";
 
 const cx = classNames.bind(styles);
@@ -21,58 +22,56 @@ const TalkDetail: React.FC<RouteComponentProps<{ date: string }>> = ({
 
   return (
     <div className={cx("container")}>
-      <div className={cx("leftColumn")}>
-        <div className={cx("title")}>
-          <span onClick={history.goBack} className={cx("backButton")}>
-            <FontAwesomeIcon
-              icon={faArrowLeft}
-              size="2x"
-              className={cx("arrow")}
-            />
-          </span>
-          <Text type="h2" bold={true} italic={true} color="lime">
-            {talk.title}
+      <div className={cx("title")}>
+        <span onClick={history.goBack} className={cx("arrowClick")}>
+          <FontAwesomeIcon
+            icon={faArrowLeft}
+            size="2x"
+            className={cx("arrow")}
+          />
+        </span>
+        <Text type="h2" bold={true} italic={true} color="lime">
+          {talk.title}
+        </Text>
+      </div>
+      <div className={cx("tag")}>
+        {talk.tags.map((tag: string) => (
+          <Tag>{tag}</Tag>
+        ))}
+      </div>
+      <div className={cx("detail")}>
+        <Text>{talk.abstract}</Text>
+      </div>
+      <div className={cx("event")}>
+        <div className={cx("eventTitle")}>
+          <Text type="h2" color="lime">
+            Event
           </Text>
         </div>
-        <div className={cx("tag")}>
-          {talk.tags.map((tag: string) => (
-            <Tag>{tag}</Tag>
-          ))}
+        <div className={cx("eventName")}>
+          <Text type="h3" bold={true}>
+            {talk.event.name}
+          </Text>
         </div>
-        <div className={cx("detail")}>
-          <Text>{talk.abstract}</Text>
+        <div className={cx("eventDetail")}>
+          <Text>Date: {talk.date}</Text>
         </div>
-        <div className={cx("event")}>
-          <div className={cx("eventTitle")}>
-            <Text type="h2" color="lime">
-              Event
-            </Text>
-          </div>
-          <div className={cx("eventName")}>
-            <Text type="h3" bold={true}>
-              {talk.event.name}
-            </Text>
-          </div>
-          <div className={cx("eventDetail")}>
-            <Text>Date: {talk.date}</Text>
-          </div>
-          <div className={cx("eventDetail")}>
-            <Text>
-              Locale: {talk.location.city} {talk.location.country}
-            </Text>
-          </div>
-          <div className={cx("eventDetail")}>
-            <Text>
-              Link: <a href={talk.event.link}>{talk.event.link}</a>
-            </Text>
-          </div>
+        <div className={cx("eventDetail")}>
+          <Text>
+            Locale: {talk.location.city} {talk.location.country}
+          </Text>
+        </div>
+        <div className={cx("eventDetail")}>
+          <Text>
+            Link: <a href={talk.event.link}>{talk.event.link}</a>
+          </Text>
         </div>
       </div>
-      <div className={cx("rightColumn")}>
-        {talk.photos && <LinkCard type="photo" href={talk.photos} />}
-        {talk.slides && <LinkCard type="slide" href={talk.slides} />}
-        {talk.video && <LinkCard type="video" href={talk.video} />}
+      <div className={cx("photoCarousel")}>
+        <PhotoCarousel />
       </div>
+      {talk.slides && <LinkCard type="slide" href={talk.slides} />}
+      {talk.video && <LinkCard type="video" href={talk.video} />}
     </div>
   );
 };

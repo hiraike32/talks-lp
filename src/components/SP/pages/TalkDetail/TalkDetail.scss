@@ -1,12 +1,16 @@
 @import "../../../../styles/all.scss";
 
 .container {
-  padding: $pageHightPadding $pageWidthPadding;
+  padding: $spPageHightPadding $spPageWidthPadding;
+}
+
+.title {
   display: flex;
 }
 
-.leftColumn {
-  width: 50%;
+.arrowClick {
+  display: flex;
+  align-items: center;
 }
 
 .arrow {
@@ -37,7 +41,7 @@
 }
 
 .event {
-  margin-top: 2.5rem;
+  margin: 2.5rem 0;
 }
 
 .eventName {
@@ -61,9 +65,7 @@
   opacity: 0.5;
 }
 
-.rightColumn {
-  width: 50%;
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
+.photoCarousel {
+  margin-bottom: 2.5rem;
+  border: 0.1rem solid $fontLime;
 }
