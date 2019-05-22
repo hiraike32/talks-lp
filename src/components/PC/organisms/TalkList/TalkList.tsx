@@ -29,17 +29,13 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
   const [searchedTalks, setSearchedTalks] = React.useState<TalkJson[]>(
     talksJson,
   );
-  const totalCount = talksJson.length;
 
   React.useEffect(() => {
     setTalks(getPagedTalksJson(searchedTalks));
     setSelectedPage(1);
   }, [searchedTalks]);
 
-  React.useEffect(() => {
-    setTalks(getPagedTalksJson(talksJson));
-    setSelectedPage(1);
-  }, [talksJson]);
+  const totalCount = talksJson.length;
 
   return (
     <div className={cx("container")}>
@@ -75,7 +71,7 @@ const TalkList: React.FC<Props> = ({ title, goBack, talksJson }) => {
           ) : (
             talks[selectedPage - 1].map((talk: TalkJson) => {
               return (
-                <span key={talk.title}>
+                <span key={talk._id}>
                   <TalkCard {...talk} />
                 </span>
               );

@@ -5,7 +5,6 @@ import classNames from "classnames/bind";
 import * as React from "react";
 import topImage from "../../../../image/top.jpg";
 import talkJson from "../../../../resource/talks.json";
-import { getWorldTalksJson } from "../../../../utils/getTalksJson";
 import TopMessage from "../../../Common/molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
 import TalkMap from "../TalkMap/TalkMap";
@@ -16,8 +15,6 @@ const cx = classNames.bind(styles);
 library.add(faAngleDoubleDown);
 
 const Top: React.FC = () => {
-  const [countryJson, setCountryJson] = React.useState(getWorldTalksJson());
-
   return (
     <div className={cx("container")}>
       <div className={cx("top")}>

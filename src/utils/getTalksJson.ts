@@ -1,7 +1,7 @@
 import talks from "../resource/talks.json";
 import { CityJson, CountryJson, TalkJson } from "../types/talks.js";
 
-export const getWorldTalksJson = () => {
+export const getWorldTalksJson = (talks: TalkJson[]) => {
   const countryJson: CountryJson[] = [];
   talks.map((talk: TalkJson) => {
     let countryExists = false;

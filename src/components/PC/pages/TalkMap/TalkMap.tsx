@@ -1,5 +1,6 @@
 import classNames from "classnames/bind";
 import * as React from "react";
+import talks from "../../../../resource/talks.json";
 import { getWorldTalksJson } from "../../../../utils/getTalksJson";
 import Text from "../../../Common/atoms/Text/Text";
 import Map from "../../organisms/Map/Map";
@@ -8,7 +9,9 @@ import styles from "./TalkMap.scss";
 const cx = classNames.bind(styles);
 
 const TalkMap: React.FC = () => {
-  const [countryJson, setCountryJson] = React.useState(getWorldTalksJson());
+  const [countryJson, setCountryJson] = React.useState(
+    getWorldTalksJson(talks),
+  );
   return (
     <>
       <div className={cx("container")}>
