@@ -3,13 +3,10 @@ import { faAngleDoubleDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames/bind";
 import * as React from "react";
-import { RouteComponentProps } from "react-router";
+import { useQuery } from "react-apollo-hooks";
 import topImage from "../../../../image/top.jpg";
-import talkJson from "../../../../resource/talks.json";
-import {
-  getPagedTalksJson,
-  getWorldTalksJson,
-} from "../../../../utils/getTalksJson";
+import { getWorldTalksJson } from "../../../../utils/getTalksJson";
+import { getAllTalksQueryForList } from "../../../../utils/getTalksQuery";
 import ColorBox from "../../../Common/atoms/ColorBox/ColorBox";
 import TopMessage from "../../../Common/molecules/TopMessage/TopMessage";
 import TalkList from "../../organisms/TalkList/TalkList";
@@ -21,8 +18,8 @@ const cx = classNames.bind(styles);
 
 library.add(faAngleDoubleDown);
 
-const Top: React.FC<RouteComponentProps> = ({ history }) => {
-  const [countryJson, setCountryJson] = React.useState(getWorldTalksJson());
+const Top: React.FC = () => {
+  const { data, loading } = useQuery(getAllTalksQueryForList());
 
   return (
     <div className={cx("container")}>
@@ -45,10 +42,16 @@ const Top: React.FC<RouteComponentProps> = ({ history }) => {
       </div>
       <div className={cx("talkDetail")}>
         <div className={cx("worldList")}>
-          <WorldTalkList countryJson={countryJson} />
+          {!loading && (
+            <WorldTalkList
+              countryJson={getWorldTalksJson(data.getTalks.talks)}
+            />
+          )}
         </div>
         <div className={cx("talkList")}>
-          <TalkList title="Recent Talks" talksJson={talkJson} />
+          {!loading && (
+            <TalkList title="Recent Talks" talksJson={data.getTalks.talks} />
+          )}
         </div>
       </div>
     </div>

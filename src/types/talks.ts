@@ -1,4 +1,5 @@
 export interface TalkJson {
+  _id?: string;
   title: string;
   abstract: string;
   type: string;
@@ -32,4 +33,9 @@ export interface CityJson {
   city: string;
   coordinates: [number, number];
   total: number;
+}
+
+export interface AllTalksData {
+  totalCount: number;
+  talks: TalkJson[];
 }
